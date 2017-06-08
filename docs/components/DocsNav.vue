@@ -1,0 +1,62 @@
+<template>
+<div class='container'>
+  <ul class='items'>
+    <li class='item ms-fontWeight-semibold ms-fontSize-xl'>
+      <router-link class='ms-fontColor-neutralPrimary' :to="{ name: 'Home' }">Fabric Vue</router-link>
+    </li>
+    <li class='item ms-fontSize-l ms-fontWeight-light'>
+      <router-link class='ms-fontColor-neutralSecondary' :to="{ name: 'GetStarted' }">Get Started</router-link>
+    </li>
+    <li class='item ms-fontSize-l ms-fontWeight-light'>
+      <a class='ms-fontColor-neutralSecondary' href='#'>Components</a>
+      <ul class='items items__submenu'>
+        <li class='item ms-fontSize-m ms-fontWeight-regular' v-for='componentName of allComponentsName'>
+          <router-link class='ms-fontColor-neutralSecondary' :to='componentRoutes(componentName)'>{{ componentName }}</router-link>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+</template>
+<style scoped>
+.container {
+  padding: 20px 12px 20px 36px;
+}
+
+.items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.item {
+  margin-bottom: 20px;
+}
+
+.item a {
+  text-decoration: none;
+}
+
+.items__submenu {
+  margin-left: 8px;
+}
+</style>
+<script>
+import AllUIComponents from '../ui-components';
+
+export default {
+  data() {
+    const allComponentsName = Object.keys(AllUIComponents);
+
+    return {
+      allComponentsName
+    };
+  },
+
+  methods: {
+    componentRoutes(componentName) {
+      return `/components/${componentName}`;
+    }
+  }
+};
+</script>

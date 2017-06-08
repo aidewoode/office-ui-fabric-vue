@@ -1,0 +1,56 @@
+{
+  "name": "office-ui-fabric-vue",
+  "version": "0.0.1",
+  "description": "Office UI Fabric implementation for Vue.js",
+  "main": "dist/index.js",
+  "author": "aidewoode <aidewoode@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aidewoode/office-ui-fabric-vue"
+  },
+  "bugs": {
+    "url": "https://github.com/aidewoode/office-ui-fabric-vue/issues"
+  },
+  "keywords": [
+    "vue",
+    "vuejs",
+    "office",
+    "office-ui-fabric"
+  ],
+  "scripts": {
+    "server": "./node_modules/.bin/webpack-dev-server --inline --hot --env=development",
+    "bundle": "./node_modules/.bin/webpack --env=production"
+  },
+  "devDependencies": {
+    "babel-core": "^6.24.1",
+    "babel-loader": "^7.0.0",
+    "babel-preset-env": "^1.5.1",
+    "css-loader": "^0.28.2",
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb-base": "^11.2.0",
+    "eslint-loader": "^1.7.1",
+    "eslint-plugin-html": "^2.0.3",
+    "eslint-plugin-import": "^2.2.0",
+    "jest": "^20.0.4",
+    "jest-vue-preprocessor": "^1.0.0",
+    "normalize.css": "^7.0.0",
+    "style-loader": "^0.18.2",
+    "vue": "^2.3.3",
+    "vue-loader": "^12.1.0",
+    "vue-router": "^2.5.3",
+    "vue-template-compiler": "^2.3.3",
+    "webpack": "^2.6.0",
+    "webpack-dev-server": "^2.4.5"
+  },
+  "dependencies": {
+    "extract-text-webpack-plugin": "^2.1.0",
+    "office-ui-fabric-js": "^1.4.0"
+  },
+  "jest": {
+    "transform": {
+      ".*\\.vue$": "jest-vue-preprocessor",
+      ".*": "babel-jest"
+    }
+  }
+}
