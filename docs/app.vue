@@ -7,7 +7,9 @@
     <div class='nav'>
       <docs-nav />
     </div>
-    <div class='content'></div>
+    <div class='content ms-bgColor-neutralLighter'>
+      <router-view />
+    </div>
   </div>
 </div>
 </template>
@@ -21,7 +23,8 @@
   right: 0;
   left: 0;
   background: #000;
-  padding: 0 8px;
+  padding: 0 15px;
+  z-index: 100;
 }
 
 .wrapper {
@@ -37,7 +40,6 @@
 
 .content {
   width: calc(100% - 208px);
-  padding: 0 40px 0 40px;
 }
 </style>
 <script>

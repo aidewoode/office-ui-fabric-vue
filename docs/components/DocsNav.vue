@@ -2,16 +2,18 @@
 <div class='container'>
   <ul class='items'>
     <li class='item ms-fontWeight-semibold ms-fontSize-xl'>
-      <router-link class='ms-fontColor-neutralPrimary' :to="{ name: 'Home' }">Fabric Vue</router-link>
+      <router-link class='ms-fontColor-neutralPrimary ms-fontColor-neutralDark--hover' to='/'>Fabric Vue</router-link>
     </li>
     <li class='item ms-fontSize-l ms-fontWeight-light'>
-      <router-link class='ms-fontColor-neutralSecondary' :to="{ name: 'GetStarted' }">Get Started</router-link>
+      <router-link class='ms-fontColor-neutralSecondary ms-fontColor-neutralDark--hover nav_link' to='/GetStarted'>Get Started</router-link>
     </li>
     <li class='item ms-fontSize-l ms-fontWeight-light'>
-      <a class='ms-fontColor-neutralSecondary' href='#'>Components</a>
-      <ul class='items items__submenu'>
+      <router-link class='ms-fontColor-neutralSecondary ms-fontColor-neutralDark--hover nav_link' to='/components'>
+        <span @click.prevent.stop='toggleSubNav'>Components</span>
+      </router-link>
+      <ul class='items items__submenu' v-if='subNavIsOpen'>
         <li class='item ms-fontSize-m ms-fontWeight-regular' v-for='componentName of allComponentsName'>
-          <router-link class='ms-fontColor-neutralSecondary' :to='componentRoutes(componentName)'>{{ componentName }}</router-link>
+          <router-link class='ms-fontColor-neutralSecondary ms-fontColor-neutralPrimary--hover nav_link--sub' :to="'/components/' + componentName">{{ componentName }}</router-link>
         </li>
       </ul>
     </li>
@@ -39,6 +41,29 @@
 
 .items__submenu {
   margin-left: 8px;
+  margin-top: 20px;
+}
+
+.nav_link {
+  display: flex;
+  align-items: center;
+}
+
+.nav_link.router-link-active {
+  color: #212121;
+}
+
+.nav_link.router-link-active:before {
+  content: '';
+  position: absolute;
+  left: 20px;
+  width: 2px;
+  height: 20px;
+  background: #107c10;
+}
+
+.nav_link--sub.router-link-active {
+  color: #333;
 }
 </style>
 <script>
@@ -47,15 +72,17 @@ import AllUIComponents from '../ui-components';
 export default {
   data() {
     const allComponentsName = Object.keys(AllUIComponents);
+    const subNavIsOpen = this.$route.path.split('/').includes('components');
 
     return {
-      allComponentsName
+      allComponentsName,
+      subNavIsOpen
     };
   },
 
   methods: {
-    componentRoutes(componentName) {
-      return `/components/${componentName}`;
+    toggleSubNav() {
+      this.subNavIsOpen = !this.subNavIsOpen;
     }
   }
 };
