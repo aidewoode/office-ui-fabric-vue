@@ -7,7 +7,7 @@
     <div class='nav'>
       <docs-nav />
     </div>
-    <div class='content ms-bgColor-neutralLighter'>
+    <div class='content ms-bgColor-neutralLighterAlt'>
       <router-view />
     </div>
   </div>

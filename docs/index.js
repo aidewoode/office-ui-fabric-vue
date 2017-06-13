@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 
+import OfficeUIFabricVue from '../src';
 import App from './app.vue';
 import Routes from './routes';
 
@@ -41,6 +42,7 @@ const AllComponentsName = [
 
 const router = Routes(VueRouter, AllComponentsName);
 
+Vue.use(OfficeUIFabricVue);
 Vue.use(VueRouter);
 
 // inject a instance methods, so can get AllComponentsName in any components

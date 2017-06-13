@@ -46,7 +46,8 @@
   },
   "dependencies": {
     "extract-text-webpack-plugin": "^2.1.0",
-    "office-ui-fabric-js": "^1.4.0"
+    "office-ui-fabric-js": "^1.4.0",
+    "prismjs": "^1.6.0"
   },
   "jest": {
     "transform": {
