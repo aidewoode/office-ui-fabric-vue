@@ -13,5 +13,8 @@ module.exports = {
   "plugins": [
     "import",
     "html"
-  ]
+  ],
+  "globals": {
+    "fabric": true
+  }
 };

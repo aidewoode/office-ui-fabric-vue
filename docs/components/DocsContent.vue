@@ -65,6 +65,10 @@
   padding: 50px;
 }
 
+.content:nth-child(even) {
+  background: #fff;
+}
+
 .content__title {
   margin: 10px 0 24px;
   font-size: 36px;

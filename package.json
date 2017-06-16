@@ -32,9 +32,13 @@
     "eslint-loader": "^1.7.1",
     "eslint-plugin-html": "^2.0.3",
     "eslint-plugin-import": "^2.2.0",
+    "extract-text-webpack-plugin": "^2.1.0",
     "jest": "^20.0.4",
     "jest-vue-preprocessor": "^1.0.0",
     "normalize.css": "^7.0.0",
+    "path": "^0.12.7",
+    "prismjs": "^1.6.0",
+    "script-loader": "^0.7.0",
     "style-loader": "^0.18.2",
     "vue": "^2.3.3",
     "vue-loader": "^12.1.0",
@@ -45,9 +49,7 @@
     "webpack-dev-server": "^2.4.5"
   },
   "dependencies": {
-    "extract-text-webpack-plugin": "^2.1.0",
-    "office-ui-fabric-js": "^1.4.0",
-    "prismjs": "^1.6.0"
+    "office-ui-fabric-js": "1.4.0"
   },
   "jest": {
     "transform": {

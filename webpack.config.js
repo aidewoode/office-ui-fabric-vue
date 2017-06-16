@@ -1,35 +1,41 @@
 const webpack = require('webpack');
+const path = require('path');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = function(env) {
-  const entryPathName = env == 'production' ? 'src' : 'docs';
+  const distEntry = {
+    'index.js': './src/index.js',
+    'index.css': './src/index.css'
+  };
+
+  const docsEntry = {
+    'index.docs.js': './docs/index.js',
+    'index.docs.css': './docs/index.css'
+  }
+
+  const entry = (env == 'development') ? docsEntry : Object.assign(distEntry, docsEntry);
+
   let uglifyPlugin = []
 
   if (env == 'production') {
     uglifyPlugin.push(new webpack.optimize.UglifyJsPlugin());
   }
 
-
   return {
     context: __dirname,
-    entry: {
-      'index.js': './' + entryPathName + '/index.js',
-      'index.css': './' + entryPathName + '/index.css'
-    },
+    entry: entry,
     output: {
       path: __dirname + '/dist',
       filename: '[name]',
+      publicPath: 'http://localhost:8080/dist',
       library: 'OfficeUIFabricVue',
       libraryTarget: 'umd'
-    },
-    devServer: {
-      contentBase: __dirname + '/docs',
     },
     module: {
       rules: [
         {
           test: /\.vue$/,
-          exclude: /node_modules/,
+          exclude: path.resolve(__dirname, 'node_modules'),
           use: [
             'vue-loader',
             'eslint-loader'
@@ -37,11 +43,16 @@ module.exports = function(env) {
         },
         {
           test: /\.js$/,
-          exclude: /node_modules/,
+          exclude: path.resolve(__dirname, 'node_modules'),
           use: [
             'babel-loader',
             'eslint-loader'
           ]
+        },
+        {
+          test: /\.js$/,
+          include: path.resolve(__dirname, 'node_modules/office-ui-fabric-js/dist/js'),
+          use: ['script-loader']
         },
         {
           test: /\.css$/,
@@ -54,7 +65,7 @@ module.exports = function(env) {
     },
     plugins: [
       ...uglifyPlugin,
-      new ExtractTextPlugin('index.css'),
+      new ExtractTextPlugin('[name]'),
       //  define the vue enviroment.
       new webpack.DefinePlugin({
         'process.env': {

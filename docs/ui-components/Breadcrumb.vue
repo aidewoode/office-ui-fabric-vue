@@ -14,14 +14,55 @@
       above the primary content area.
     </p>
   </div>
+  <div slot='Variants'>
+    <docs-code-block title='Default Breadcrumb' :code='defaultBreadcrumbCode'>
+      <ou-breadcrumb>
+        <ou-breadcrumb-item>Folder1</ou-breadcrumb-item>
+        <ou-breadcrumb-item>Folder2</ou-breadcrumb-item>
+        <ou-breadcrumb-item>Folder3</ou-breadcrumb-item>
+        <ou-breadcrumb-item>Folder4</ou-breadcrumb-item>
+        <ou-breadcrumb-item>Folder5</ou-breadcrumb-item>
+        <ou-breadcrumb-item>Folder6</ou-breadcrumb-item>
+      </ou-breadcrumb>
+    </docs-code-block>
+  </div>
+  <div slot='Implementation'>
+    <h3 class='ms-font-l'>Breadcrumb Item Props</h3>
+    <docs-props-table :data='breadcrumbItemProps' />
+  </div>
 </docs-content>
 </template>
 <script>
 import DocsContent from '../components/DocsContent.vue';
+import DocsCodeBlock from '../components/DocsCodeBlock.vue';
+import DocsPropsTable from '../components/DocsPropsTable.vue';
 
 export default {
+  data() {
+    return {
+      defaultBreadcrumbCode: `
+        <template>
+          <ou-breadcrumb>
+            <ou-breadcrumb-item>Folder1</ou-breadcrumb-item>
+            <ou-breadcrumb-item>Folder2</ou-breadcrumb-item>
+            <ou-breadcrumb-item>Folder3</ou-breadcrumb-item>
+            <ou-breadcrumb-item>Folder4</ou-breadcrumb-item>
+            <ou-breadcrumb-item>Folder5</ou-breadcrumb-item>
+            <ou-breadcrumb-item>Folder6</ou-breadcrumb-item>
+          </ou-breadcrumb>
+        </template>
+      `,
+
+      breadcrumbItemProps: [
+        { name: 'href', type: 'String', required: 'false', acceptedValue: '--', defaultValue: '--', description: 'the url for the breadcrumb item' }
+      ]
+    };
+  },
+
   components: {
-    DocsContent
+    DocsContent,
+    DocsCodeBlock,
+    DocsPropsTable
   }
 };
 </script>
