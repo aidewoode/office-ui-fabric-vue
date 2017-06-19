@@ -1,7 +1,9 @@
-import tableInstaller from './components/table';
 import breadcrumbInstaller from './components/breadcrumb';
+import buttonInstaller from './components/button';
+import tableInstaller from './components/table';
 
 export default function (Vue) {
-  tableInstaller(Vue);
   breadcrumbInstaller(Vue);
+  buttonInstaller(Vue);
+  tableInstaller(Vue);
 }
