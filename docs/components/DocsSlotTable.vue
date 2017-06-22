@@ -3,10 +3,6 @@
   <h3 class='ms-font-l'>{{ title }}</h3>
   <ou-table :data='data'>
     <ou-table-column prop='name'>Name</ou-table-column>
-    <ou-table-column prop='type'>Type</ou-table-column>
-    <ou-table-column prop='required'>Required</ou-table-column>
-    <ou-table-column prop='acceptedValue'>Accepted Value</ou-table-column>
-    <ou-table-column prop='defaultValue'>Default Value</ou-table-column>
     <ou-table-column prop='description'>Description</ou-table-column>
   </ou-table>
 </div>
@@ -22,7 +18,7 @@ export default {
 
   computed: {
     title() {
-      return `${this.name} Props`;
+      return `${this.name} Slot`;
     }
   }
 };

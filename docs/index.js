@@ -5,48 +5,22 @@ import OfficeUIFabricVue from '../src';
 import App from './app.vue';
 import Routes from './routes';
 
-
-const AllComponentsName = [
-  'Breadcrumb',
-  'Button',
-  'Callout',
-  'CheckBox',
-  'ChoiceFieldGroup',
-  'CommandBar',
-  'CommandButton',
-  'ContextualMenu',
-  'DatePicker',
-  'Dialog',
-  'Dropdown',
-  'FacePile',
-  'Label',
-  'Link',
-  'List',
-  'ListItem',
-  'MessageBanner',
-  'MessageBar',
-  'OrgChart',
-  'Overlay',
-  'Panel',
-  'PeoplePicker',
-  'Persona',
-  'PersonaCard',
-  'Pivot',
-  'ProgressIndicator',
-  'SearchBox',
-  'Spinner',
-  'Table',
-  'TextField',
-  'Toggle'
-];
-
-const router = Routes(VueRouter, AllComponentsName);
+import DocsContent from './components/DocsContent.vue';
+import DocsCodeBlock from './components/DocsCodeBlock.vue';
+import DocsPropsTable from './components/DocsPropsTable.vue';
+import DocsEventsTable from './components/DocsEventsTable.vue';
+import DocsSlotTable from './components/DocsSlotTable.vue';
 
 Vue.use(OfficeUIFabricVue);
 Vue.use(VueRouter);
 
-// inject a instance methods, so can get AllComponentsName in any components
-Vue.prototype.$allComponentsName = AllComponentsName;
+Vue.component('docs-content', DocsContent);
+Vue.component('docs-code-block', DocsCodeBlock);
+Vue.component('docs-props-table', DocsPropsTable);
+Vue.component('docs-events-table', DocsEventsTable);
+Vue.component('docs-slot-table', DocsSlotTable);
+
+const router = Routes(VueRouter);
 
 new Vue({
   router,

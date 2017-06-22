@@ -27,16 +27,11 @@
     </docs-code-block>
   </div>
   <div slot='Implementation'>
-    <h3 class='ms-font-l'>Breadcrumb Item Props</h3>
-    <docs-props-table :data='breadcrumbItemProps' />
+    <docs-props-table :data='breadcrumbItemProps' name='Breadcrumb Item' />
   </div>
 </docs-content>
 </template>
 <script>
-import DocsContent from '../components/DocsContent.vue';
-import DocsCodeBlock from '../components/DocsCodeBlock.vue';
-import DocsPropsTable from '../components/DocsPropsTable.vue';
-
 export default {
   data() {
     return {
@@ -55,12 +50,6 @@ export default {
         { name: 'href', type: 'String', required: 'false', acceptedValue: '--', defaultValue: '--', description: 'the url for the breadcrumb item' }
       ]
     };
-  },
-
-  components: {
-    DocsContent,
-    DocsCodeBlock,
-    DocsPropsTable
   }
 };
 </script>

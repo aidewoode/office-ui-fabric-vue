@@ -22,18 +22,12 @@
     </docs-code-block>
   </div>
   <div slot='Implementation'>
-    <h3 class='ms-font-l'>Table Props</h3>
-    <docs-props-table :data='tableProps' />
-    <h3 class='ms-font-l'>Table Column Props</h3>
-    <docs-props-table :data='tableColumnProps' />
+    <docs-props-table :data='tableProps' name='Table'/>
+    <docs-props-table :data='tableColumnProps' name='Table Column' />
   </div>
 </docs-content>
 </template>
 <script>
-import DocsContent from '../components/DocsContent.vue';
-import DocsCodeBlock from '../components/DocsCodeBlock.vue';
-import DocsPropsTable from '../components/DocsPropsTable.vue';
-
 export default {
   data() {
     return {
@@ -101,12 +95,6 @@ export default {
         { name: 'prop', type: 'String', required: 'true', acceptedValue: '--', defaultValue: '--', description: 'the field name of the data for table' },
       ]
     };
-  },
-
-  components: {
-    DocsContent,
-    DocsCodeBlock,
-    DocsPropsTable
   }
 };
 </script>

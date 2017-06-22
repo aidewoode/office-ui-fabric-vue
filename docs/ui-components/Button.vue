@@ -29,19 +29,12 @@
     </docs-code-block>
   </div>
   <div slot='Implementation'>
-    <h3 class='ms-font-l'>Button Props</h3>
-    <docs-props-table :data='buttonProps' />
-    <h3 class='ms-font-l'>Button Events</h3>
-    <docs-events-table :data='buttonEvents' />
+    <docs-props-table :data='buttonProps' name='Button' />
+    <docs-events-table :data='buttonEvents' name='Button' />
   </div>
 </docs-content>
 </template>
 <script>
-import DocsContent from '../components/DocsContent.vue';
-import DocsCodeBlock from '../components/DocsCodeBlock.vue';
-import DocsPropsTable from '../components/DocsPropsTable.vue';
-import DocsEventsTable from '../components/DocsEventsTable.vue';
-
 export default {
   data() {
     return {
@@ -60,13 +53,6 @@ export default {
         { name: 'click', params: '--', description: 'the callback function when clicked' }
       ]
     };
-  },
-
-  components: {
-    DocsContent,
-    DocsCodeBlock,
-    DocsPropsTable,
-    DocsEventsTable
   }
 };
 </script>
