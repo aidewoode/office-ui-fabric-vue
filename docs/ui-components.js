@@ -1,7 +1,7 @@
 import Breadcrumb from './ui-components/Breadcrumb.vue';
 import Button from './ui-components/Button.vue';
 import Callout from './ui-components/Callout.vue';
-import CheckBox from './ui-components/CheckBox.vue';
+import Checkbox from './ui-components/Checkbox.vue';
 import ChoiceFieldGroup from './ui-components/ChoiceFieldGroup.vue';
 import CommandBar from './ui-components/CommandBar.vue';
 import CommandButton from './ui-components/CommandButton.vue';
@@ -34,7 +34,7 @@ export default {
   Breadcrumb,
   Button,
   Callout,
-  CheckBox,
+  Checkbox,
   ChoiceFieldGroup,
   CommandBar,
   CommandButton,

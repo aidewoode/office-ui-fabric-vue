@@ -8,7 +8,8 @@ module.exports = {
     "import/prefer-default-export": "off",
     "import/no-extraneous-dependencies": "off",
     "arrow-body-style": "off",
-    "no-useless-escape": "off"
+    "no-useless-escape": "off",
+    "no-unused-expressions": ["error", { "allowTernary": true }]
   },
   "plugins": [
     "import",
