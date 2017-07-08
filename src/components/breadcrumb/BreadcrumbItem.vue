@@ -9,9 +9,7 @@
 <script>
 export default {
   props: {
-    href: {
-      type: String
-    }
+    href: String
   }
 };
 </script>

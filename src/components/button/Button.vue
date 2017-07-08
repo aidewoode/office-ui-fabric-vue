@@ -23,13 +23,8 @@ export default {
       default: false
     },
 
-    icon: {
-      type: String
-    },
-
-    description: {
-      type: String
-    }
+    icon: String,
+    description: String
   },
 
   computed: {

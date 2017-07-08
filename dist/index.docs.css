@@ -456,4 +456,6 @@ template {
 [hidden] {
   display: none;
 }
-
+html {
+  line-height: normal;
+}

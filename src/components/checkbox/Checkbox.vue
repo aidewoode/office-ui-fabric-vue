@@ -15,9 +15,7 @@
 <script>
 export default {
   props: {
-    value: {
-      type: Boolean
-    },
+    value: Boolean,
 
     disabled: {
       type: Boolean,

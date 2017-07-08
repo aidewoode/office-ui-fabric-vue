@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
+import VueScrollTo from 'vue-scrollto';
 
 import OfficeUIFabricVue from '../src';
 import App from './app.vue';
@@ -13,6 +14,7 @@ import DocsSlotTable from './components/DocsSlotTable.vue';
 
 Vue.use(OfficeUIFabricVue);
 Vue.use(VueRouter);
+Vue.use(VueScrollTo);
 
 Vue.component('docs-content', DocsContent);
 Vue.component('docs-code-block', DocsCodeBlock);

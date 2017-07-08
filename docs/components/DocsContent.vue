@@ -4,7 +4,11 @@
     <div class='header__title ms-fontColor-white ms-fontWeight-light'>{{ title }}</div>
     <ul class='header__nav' v-if='hasNav'>
       <li v-for='navItem of navItems'>
-        <a class='header__nav--item ms-fontColor-white ms-fontSize-l ms-fontWeight-semilight ms-fontWeight-semibold--hover' :data-title='navItem' :href="'/#' + navItem">{{ navItem }}</a>
+        <a class='header__nav--item ms-fontColor-white ms-fontSize-l ms-fontWeight-semilight ms-fontWeight-semibold--hover'
+          :data-title='navItem'
+          v-scroll-to="{ el: '#' + navItem, offset: -100 }">
+          {{ navItem }}
+        </a>
       </li>
     </ul>
   </div>
@@ -14,7 +18,7 @@
     </div>
     <div v-else>
       <div class='content' v-for='navItem of navItems'>
-        <h2 class='content__title ms-fontWeight-light'>{{ navItem }}</h2>
+        <h2 :id='navItem' class='content__title ms-fontWeight-light'>{{ navItem }}</h2>
         <slot :name='navItem'></slot>
       </div>
     </div>

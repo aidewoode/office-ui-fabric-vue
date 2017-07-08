@@ -48,13 +48,8 @@ export default {
       default: false
     },
 
-    title: {
-      type: String
-    },
-
-    content: {
-      type: String
-    }
+    title: String,
+    content: String
   },
 
   computed: {

@@ -6,13 +6,8 @@
 <script>
 export default {
   props: {
-    href: {
-      type: String
-    },
-
-    title: {
-      type: String
-    }
+    href: String,
+    title: String,
   },
 
   methods: {
