@@ -29,14 +29,26 @@ export default {
     };
   },
 
+  watch: {
+    value() {
+      this.setCheck();
+    }
+  },
+
   mounted() {
     this.checkboxInstance = new fabric.CheckBox(this.$refs.checkbox);
-    this.value && !this.disabled ? this.checkboxInstance.check() : this.checkboxInstance.unCheck();
+    this.setCheck();
   },
 
   methods: {
     toggle() {
       this.$emit('input', this.checkboxInstance.getValue());
+    },
+
+    setCheck() {
+      this.value && !this.disabled ?
+        this.checkboxInstance.check() :
+        this.checkboxInstance.unCheck();
     }
   }
 };

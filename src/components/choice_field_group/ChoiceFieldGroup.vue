@@ -14,19 +14,28 @@ export default {
     value: [String, Number]
   },
 
-  mounted() {
-    this.$children.forEach((child) => {
-      if (child.value === this.value) {
-        child.checkRadio();
-      }
-    });
+  watch: {
+    value() {
+      this.setChildrenValue();
+    }
+  },
 
+  mounted() {
+    this.setChildrenValue();
     new fabric.ChoiceFieldGroup(this.$refs.choiceFieldGroup);
   },
 
   methods: {
     updateValue(value) {
       this.$emit('input', value);
+    },
+
+    setChildrenValue() {
+      this.$children.forEach((child) => {
+        if (child.value === this.value) {
+          child.checkRadio();
+        }
+      });
     }
   }
 };
