@@ -1,10 +1,6 @@
 <template>
 <docs-content title='Table'>
-  <div slot='Overview'>
-    <p>
-    Presents tabular data with multiple rows and columns. The table's width is flexible, but it does not have any advanced responsive behaviors.
-    </p>
-  </div>
+  <div slot='Overview' v-html='overviewContent'></div>
   <div slot='Variants'>
     <docs-code-block title='Default Table' :code='defaultTableCode'>
       <ou-table :data='tableData'>
@@ -28,9 +24,12 @@
 </docs-content>
 </template>
 <script>
+import overviewContent from '../markdown/table/overview.md';
+
 export default {
   data() {
     return {
+      overviewContent,
       tableData: [
         { name: 'Ed', age: '24', date: '1993-11-12' },
         { name: 'Jack', age: '30', date: '1987-12-10' },

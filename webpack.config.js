@@ -51,7 +51,7 @@ module.exports = function(env) {
         },
         {
           test: /\.js$/,
-          include: path.resolve(__dirname, 'node_modules/office-ui-fabric-js/dist/js'),
+          include: path.resolve(__dirname, 'node_modules/office-ui-fabric-js/dist'),
           use: ['script-loader']
         },
         {
@@ -60,6 +60,13 @@ module.exports = function(env) {
             fallback: 'style-loader',
             use: 'css-loader'
           })
+        },
+        {
+          test: /\.md$/,
+          use: [
+            'html-loader',
+            'markdown-loader'
+          ]
         }
       ]
     },

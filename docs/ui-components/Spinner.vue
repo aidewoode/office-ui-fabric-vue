@@ -1,10 +1,6 @@
 <template>
 <docs-content title='Spinner'>
-  <div slot='Overview'>
-    <p>
-      A Spinner is an outline of a circle which animates around itself indicating to the user that things are processing. A Spinner is shown when it's unsure how long a task will take making it the indeterminate version of a ProgressIndicator. They can be various sizes, located inline with content or centered. They generally appear after an action is being processed or committed. They are subtle and generally do not take up much space, but are transitions from the completed task.
-    </p>
-  </div>
+  <div slot='Overview' v-html='overviewContent'></div>
   <div slot='Variants'>
     <docs-code-block title='Default Spinner' :code='defaultSpinnerCode'>
       <ou-spinner />
@@ -25,9 +21,12 @@
 </docs-content>
 </template>
 <script>
+import overviewContent from '../markdown/spinner/overview.md';
+
 export default {
   data() {
     return {
+      overviewContent,
       defaultSpinnerCode: '<ou-spinner />',
       largeSpinnerCode: "<ou-spinner type='large' />",
       labelSpinnerCode: "<ou-spinner label='Loading...' />",

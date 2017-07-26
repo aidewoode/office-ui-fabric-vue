@@ -1,8 +1,6 @@
 <template>
 <docs-content title='Toggle'>
-  <div slot='Overview'>
-    <p>Toggles represent a physical switch that allows users to turn things on or off. Use Toggles to present users with two mutually exclusive options (like on/off), where choosing an option results in an immediate action. Use a Toggle for binary operations that take effect right after the user flips the Toggle. For example, use a Toggle to turn services or hardware components on or off. In other words, if a physical switch would work for the action, a Toggle is probably the best control to use.</p>
-  </div>
+  <div slot='Overview' v-html='overviewContent'></div>
   <div slot='Variants'>
     <docs-code-block title='Default Toggle' :code='defaultToggleCode'>
       <ou-toggle
@@ -34,9 +32,12 @@
 </docs-content>
 </template>
 <script>
+import overviewContent from '../markdown/toggle/overview.md';
+
 export default {
   data() {
     return {
+      overviewContent,
       toggle1: false,
       toggle2: false,
       toggle3: false,

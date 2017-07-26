@@ -1,10 +1,6 @@
 <template>
 <docs-content title='TextField'>
-  <div slot='Overview'>
-    <p>
-      The TextField component enables a user to type text into an app. It's typically used to capture a single line of text, but can be configured to capture multiple lines of text. The text displays on the screen in a simple, uniform format.
-    </p>
-  </div>
+  <div slot='Overview' v-html='overviewContent'></div>
   <div slot='Variants'>
     <docs-code-block title='Default TextField' :code='defaultTextFieldCode'>
       <ou-text-field label='Name' />
@@ -28,9 +24,12 @@
 </docs-content>
 </template>
 <script>
+import overviewContent from '../markdown/text_field/overview.md';
+
 export default {
   data() {
     return {
+      overviewContent,
       defaultTextFieldCode: `
         <template>
           <ou-text-field v-model='text' label='Name' />

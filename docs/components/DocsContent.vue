@@ -19,7 +19,9 @@
     <div v-else>
       <div class='content' v-for='navItem of navItems'>
         <h2 :id='navItem' class='content__title ms-fontWeight-light'>{{ navItem }}</h2>
-        <slot :name='navItem'></slot>
+        <div :class="navItem.toLowerCase() + '_content'">
+          <slot :name='navItem'></slot>
+        </div>
       </div>
     </div>
   </div>
@@ -76,13 +78,6 @@
 .content__title {
   margin: 10px 0 24px;
   font-size: 36px;
-}
-
-.content p {
-  padding: 16px 0;
-  margin: 0;
-  max-width: 45em;
-  line-height: 1.5;
 }
 </style>
 <script>

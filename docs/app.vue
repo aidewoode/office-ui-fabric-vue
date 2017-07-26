@@ -13,6 +13,15 @@
   </div>
 </div>
 </template>
+<style>
+.overview_content p {
+  padding: 16px 0;
+  margin: 0;
+  max-width: 45em;
+  line-height: 1.5;
+}
+</style>
+
 <style scoped>
 .header {
   display: flex;

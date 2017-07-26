@@ -1,13 +1,6 @@
 <template>
 <docs-content title='Link'>
-  <div slot='Overview'>
-    <p>
-      With a Link, users can navigate to another page, window, or Help topic; display a definition; initiate a command; or choose an option. A Link indicates that it can be clicked, typically by being displayed using the visited or unvisited link system colors. Traditionally, Links are underlined as well, but that approach is often unnecessary and falling out of favor to reduce visual clutter.
-    </p>
-    <p>
-      A Link is the lightest weight clickable control, and is often used to reduce the visual complexity of a design.
-    </p>
-  </div>
+  <div slot='Overview' v-html='overviewContent'></div>
   <div slot='Variants'>
     <docs-code-block title='Default Link' :code='defaultLinkCode'>
       <ou-link href='#' title='More info about Example Link'>Example Link</ou-link>
@@ -20,9 +13,12 @@
 </docs-content>
 </template>
 <script>
+import overviewContent from '../markdown/link/overview.md';
+
 export default {
   data() {
     return {
+      overviewContent,
       defaultLinkCode: "<ou-link href='#' title='More info about Example Link'>Example Link</ou-link>",
       linkProps: [
         { name: 'href', type: 'String', required: 'false', acceptedValue: '--', defaultValue: '--', description: 'the url of the link' },

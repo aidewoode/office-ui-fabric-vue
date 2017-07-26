@@ -1,8 +1,6 @@
 <template>
 <docs-content title='ChoiceFieldGroup'>
-  <div slot='Overview'>
-    <p>Used to indicate a single choice from multiple options.</p>
-  </div>
+  <div slot='Overview' v-html='overviewContent'></div>
   <div slot='Variants'>
     <docs-code-block title='Default ChoiceFieldGroup' :code='defaultChoiceFieldGroupCode'>
       <ou-choice-field-group v-model='choiceField'>
@@ -22,9 +20,12 @@
 </docs-content>
 </template>
 <script>
+import overviewContent from '../markdown/choice_field_group/overview.md';
+
 export default {
   data() {
     return {
+      overviewContent,
       choiceField: 2,
       defaultChoiceFieldGroupCode: `
         <template>

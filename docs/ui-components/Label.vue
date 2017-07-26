@@ -1,10 +1,6 @@
 <template>
 <docs-content title='Label'>
-  <div slot='Overview'>
-    <p>
-      Labels give a name or title to a component or group of components. Labels should be in close proximity to the component or group they are paired with. Some components, such as TextField, Dropdown, or Toggle, already have Labels incorporated, but other components may optionally add a Label if it helps inform the user of the component’s purpose.
-    </p>
-  </div>
+  <div slot='Overview' v-html='overviewContent'></div>
   <div slot='Variants'>
     <docs-code-block title='Default Label' :code='defaultLabelCode'>
       <ou-label>Name</ou-label>
@@ -22,9 +18,12 @@
 </docs-content>
 </template>
 <script>
+import overviewContent from '../markdown/label/overview.md';
+
 export default {
   data() {
     return {
+      overviewContent,
       defaultLabelCode: '<ou-label>Name</ou-label>',
       disabledLabelCode: '<ou-label disabled>Name</ou-label>',
       requiredLabelCode: '<ou-label required>Name</ou-label>',
