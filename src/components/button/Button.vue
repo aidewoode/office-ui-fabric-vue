@@ -8,22 +8,18 @@
 </button>
 </template>
 <script>
+import type from '../../mixins/props/type';
+import disabled from '../../mixins/props/disabled';
+import icon from '../../mixins/props/icon';
+
 export default {
+  mixins: [
+    type('primary', 'hero', 'compound', 'small'),
+    disabled,
+    icon
+  ],
+
   props: {
-    type: {
-      type: String,
-      default: '',
-      validator(value) {
-        return ['', 'primary', 'hero', 'compound', 'small'].includes(value);
-      }
-    },
-
-    disabled: {
-      type: Boolean,
-      default: false
-    },
-
-    icon: String,
     description: String
   },
 
@@ -32,12 +28,6 @@ export default {
       return {
         [`ms-Button--${this.type}`]: !!this.type,
         'is-disabled': this.disabled
-      };
-    },
-
-    iconClass() {
-      return {
-        [`ms-Icon--${this.icon}`]: !!this.icon
       };
     }
   },

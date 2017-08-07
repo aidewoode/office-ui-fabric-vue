@@ -2,13 +2,12 @@
 <label class='ms-Label' :class='labelClass'><slot /></label>
 </template>
 <script>
-export default {
-  props: {
-    disabled: {
-      type: Boolean,
-      default: false
-    },
+import disabled from '../../mixins/props/disabled';
 
+export default {
+  mixins: [disabled],
+
+  props: {
     required: {
       type: Boolean,
       default: false

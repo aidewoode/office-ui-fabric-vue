@@ -15,16 +15,12 @@
 </table>
 </template>
 <script>
-export default {
-  props: {
-    type: {
-      type: String,
-      default: '',
-      validator(value) {
-        return ['', 'fixed'].includes(value);
-      }
-    },
+import type from '../../mixins/props/type';
 
+export default {
+  mixins: [type('fixed')],
+
+  props: {
     data: {
       type: Array,
       required: true

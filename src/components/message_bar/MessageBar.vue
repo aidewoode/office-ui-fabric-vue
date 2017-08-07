@@ -11,29 +11,19 @@
 </div>
 </template>
 <script>
-export default {
-  props: {
-    icon: String,
+import type from '../../mixins/props/type';
+import icon from '../../mixins/props/icon';
 
-    type: {
-      type: String,
-      default: '',
-      validator(value) {
-        return ['', 'success', 'error', 'blocked', 'warning', 'severeWarning'].includes(value);
-      }
-    }
-  },
+export default {
+  mixins: [
+    type('success', 'error', 'blocked', 'warning', 'severeWarning'),
+    icon
+  ],
 
   computed: {
     messageBarClass() {
       return {
         [`ms-MessageBar--${this.type}`]: !!this.type
-      };
-    },
-
-    iconClass() {
-      return {
-        [`ms-Icon--${this.icon}`]: !!this.icon
       };
     }
   }

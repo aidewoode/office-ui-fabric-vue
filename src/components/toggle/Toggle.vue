@@ -17,25 +17,17 @@
 </div>
 </template>
 <script>
+import type from '../../mixins/props/type';
+import disabled from '../../mixins/props/disabled';
+
 export default {
+  mixins: [type('textLeft'), disabled],
+
   props: {
     value: Boolean,
     onLabel: String,
     offLabel: String,
-    description: String,
-
-    type: {
-      type: String,
-      default: '',
-      validator(value) {
-        return ['', 'textLeft'].includes(value);
-      }
-    },
-
-    disabled: {
-      type: Boolean,
-      default: false
-    }
+    description: String
   },
 
   computed: {

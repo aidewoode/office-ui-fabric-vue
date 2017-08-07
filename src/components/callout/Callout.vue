@@ -25,16 +25,12 @@
 </div>
 </template>
 <script>
-export default {
-  props: {
-    type: {
-      type: String,
-      default: '',
-      validator(value) {
-        return ['', 'actionText', 'OOBE', 'peek'].includes(value);
-      }
-    },
+import type from '../../mixins/props/type';
 
+export default {
+  mixins: [type('actionText', 'OOBE', 'peek')],
+
+  props: {
     position: {
       type: String,
       default: 'right',

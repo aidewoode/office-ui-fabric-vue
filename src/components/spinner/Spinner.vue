@@ -4,17 +4,13 @@
 </div>
 </template>
 <script>
-export default {
-  props: {
-    label: String,
+import type from '../../mixins/props/type';
 
-    type: {
-      type: String,
-      default: '',
-      validator(value) {
-        return ['', 'large'].includes(value);
-      }
-    }
+export default {
+  mixins: [type('large')],
+
+  props: {
+    label: String
   },
 
   computed: {

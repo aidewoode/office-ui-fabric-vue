@@ -15,14 +15,13 @@
 </li>
 </template>
 <script>
-export default {
-  props: {
-    value: [String, Number],
+import disabled from '../../mixins/props/disabled';
 
-    disabled: {
-      type: Boolean,
-      default: false
-    }
+export default {
+  mixins: [disabled],
+
+  props: {
+    value: [String, Number]
   },
 
   methods: {

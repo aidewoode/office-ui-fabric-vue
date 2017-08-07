@@ -4,6 +4,7 @@ import calloutInstaller from './components/callout';
 import checkboxInstaller from './components/checkbox';
 import choiceFieldGroupInstaller from './components/choice_field_group';
 import datePickerInstaller from './components/date_picker';
+import dialogInstaller from './components/dialog';
 import labelInstaller from './components/label';
 import linkInstaller from './components/link';
 import messageBarInstaller from './components/message_bar';
@@ -20,6 +21,7 @@ export default function (Vue) {
   checkboxInstaller(Vue);
   choiceFieldGroupInstaller(Vue);
   datePickerInstaller(Vue);
+  dialogInstaller(Vue);
   labelInstaller(Vue);
   linkInstaller(Vue);
   messageBarInstaller(Vue);

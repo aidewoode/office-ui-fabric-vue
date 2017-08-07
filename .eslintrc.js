@@ -9,6 +9,7 @@ module.exports = {
     "import/no-extraneous-dependencies": "off",
     "arrow-body-style": "off",
     "no-useless-escape": "off",
+    "no-underscore-dangle": "off",
     "no-unused-expressions": ["error", { "allowTernary": true }]
   },
   "plugins": [

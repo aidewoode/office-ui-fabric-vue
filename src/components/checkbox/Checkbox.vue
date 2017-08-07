@@ -13,14 +13,13 @@
 </div>
 </template>
 <script>
-export default {
-  props: {
-    value: Boolean,
+import disabled from '../../mixins/props/disabled';
 
-    disabled: {
-      type: Boolean,
-      default: false
-    }
+export default {
+  mixins: [disabled],
+
+  props: {
+    value: Boolean
   },
 
   data() {

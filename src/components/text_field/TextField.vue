@@ -18,23 +18,15 @@
 </div>
 </template>
 <script>
+import type from '../../mixins/props/type';
+import disabled from '../../mixins/props/disabled';
+
 export default {
+  mixins: [type('multiline', 'underlined', 'placeholder'), disabled],
+
   props: {
     value: String,
-    label: String,
-
-    type: {
-      type: String,
-      default: '',
-      validator(value) {
-        return ['', 'multiline', 'underlined', 'placeholder'].includes(value);
-      }
-    },
-
-    disabled: {
-      type: Boolean,
-      default: false
-    }
+    label: String
   },
 
   computed: {
