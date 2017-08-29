@@ -20,7 +20,7 @@
     </div>
   </div>
   <span ref='calloutTrigger'>
-    <slot ref='calloutTrigger'/>
+    <slot />
   </span>
 </div>
 </template>
