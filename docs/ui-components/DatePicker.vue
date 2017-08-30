@@ -7,7 +7,7 @@
     </docs-code-block>
   </div>
   <div slot='Implementation'>
-    <docs-props-table :data='datePickerProps' name='DatePicker' />
+    <docs-table type='props' :data='datePickerProps' name='DatePicker' />
   </div>
 </docs-content>
 </template>
@@ -35,8 +35,8 @@ export default {
       `,
 
       datePickerProps: [
-        { name: 'label', type: 'String', required: 'false', acceptedValue: '--', defaultValue: '--', description: 'the label for the DatePicker' },
-        { name: 'placeholder', type: 'String', required: 'false', acceptedValue: '--', defaultValue: '--', description: 'the placeholder for the DatePicker' },
+        { name: 'label', type: 'String', required: 'false', description: 'the label for the DatePicker' },
+        { name: 'placeholder', type: 'String', required: 'false', description: 'the placeholder for the DatePicker' },
         { name: 'format', type: 'String', required: 'false', acceptedValue: "the 'yyyy' is year, the 'mm' is month, the 'dd' is day", defaultValue: 'yyyy-mm-dd', description: 'the format for the value of DatePicker' }
       ]
     };

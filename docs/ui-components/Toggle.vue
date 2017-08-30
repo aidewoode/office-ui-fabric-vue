@@ -27,7 +27,7 @@
     </docs-code-block>
   </div>
   <div slot='Implementation'>
-    <docs-props-table :data='toggleProps' name='Toggle' />
+    <docs-table type='props' :data='toggleProps' name='Toggle' />
   </div>
 </docs-content>
 </template>
@@ -102,12 +102,12 @@ export default {
       `,
 
       toggleProps: [
-        { name: 'v-model', type: 'Boolean', required: 'false', acceptedValue: '--', defaultValue: '--', description: 'bind boolean value to the toggle' },
-        { name: 'on-label', type: 'String', required: 'false', acceptedValue: '--', defaultValue: '--', description: 'the text for the toggle when the status is on' },
-        { name: 'off-label', type: 'String', required: 'false', acceptedValue: '--', defaultValue: '--', description: 'the text for the toggle when the status is off' },
-        { name: 'description', type: 'String', required: 'false', acceptedValue: '--', defaultValue: '--', description: 'the description for the toggle' },
-        { name: 'type', type: 'String', required: 'false', acceptedValue: 'textLeft', defaultValue: '--', description: 'the type for the toggle' },
-        { name: 'disabled', type: 'Boolean', required: 'false', acceptedValue: '--', defaultValue: 'false', description: 'if the toggle is disabled' }
+        { name: 'v-model', type: 'Boolean', required: 'false', description: 'bind boolean value to the toggle' },
+        { name: 'on-label', type: 'String', required: 'false', description: 'the text for the toggle when the status is on' },
+        { name: 'off-label', type: 'String', required: 'false', description: 'the text for the toggle when the status is off' },
+        { name: 'description', type: 'String', required: 'false', description: 'the description for the toggle' },
+        { name: 'type', type: 'String', required: 'false', acceptedValue: 'textLeft', description: 'the type for the toggle' },
+        { name: 'disabled', type: 'Boolean', required: 'false', defaultValue: 'false', description: 'if the toggle is disabled' }
       ]
     };
   }

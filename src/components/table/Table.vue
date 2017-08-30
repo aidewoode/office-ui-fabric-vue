@@ -8,7 +8,7 @@
   <tbody>
     <tr v-for='dataItem of data'>
       <td v-for='columnItem of tableColumnItems'>
-        {{ dataItem[columnItem] }}
+        {{ dataItem[columnItem] || defaultValue }}
       </td>
     </tr>
   </tbody>
@@ -24,6 +24,11 @@ export default {
     data: {
       type: Array,
       required: true
+    },
+
+    defaultValue: {
+      type: [String, Number],
+      default: ''
     }
   },
 

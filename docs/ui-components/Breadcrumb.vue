@@ -14,7 +14,7 @@
     </docs-code-block>
   </div>
   <div slot='Implementation'>
-    <docs-props-table :data='breadcrumbItemProps' name='Breadcrumb Item' />
+    <docs-table type='props' :data='breadcrumbItemProps' name='Breadcrumb Item' />
   </div>
 </docs-content>
 </template>
@@ -37,7 +37,7 @@ export default {
       `,
 
       breadcrumbItemProps: [
-        { name: 'href', type: 'String', required: 'false', acceptedValue: '--', defaultValue: '--', description: 'the url for the breadcrumb item' }
+        { name: 'href', type: 'String', required: 'false', description: 'the url for the breadcrumb item' }
       ]
     };
   }

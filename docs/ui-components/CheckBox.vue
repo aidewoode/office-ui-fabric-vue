@@ -10,7 +10,7 @@
     </docs-code-block>
   </div>
   <div slot='Implementation'>
-    <docs-props-table :data='checkboxProps' name='Checkbox' />
+    <docs-table type='props' :data='checkboxProps' name='Checkbox' />
   </div>
 </docs-content>
 </template>
@@ -53,8 +53,8 @@ export default {
       `,
 
       checkboxProps: [
-        { name: 'v-model', type: 'Boolean', required: 'false', acceptedValue: '--', defaultValue: '--', description: 'bind boolean value to the checkbox' },
-        { name: 'disabled', type: 'Boolean', required: 'false', acceptedValue: '--', defaultValue: 'false', description: 'if the checkbox is disabled' }
+        { name: 'v-model', type: 'Boolean', required: 'false', description: 'bind boolean value to the checkbox' },
+        { name: 'disabled', type: 'Boolean', required: 'false', defaultValue: 'false', description: 'if the checkbox is disabled' }
       ]
     };
   }

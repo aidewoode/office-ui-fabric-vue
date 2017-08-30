@@ -50,8 +50,8 @@
     </docs-code-block>
   </div>
   <div slot='Implementation'>
-    <docs-props-table :data='calloutProps' name='Callout'/>
-    <docs-slot-table :data='calloutSlot' name='Callout' />
+    <docs-table type='props' :data='calloutProps' name='Callout'/>
+    <docs-table type='slot' :data='calloutSlot' name='Callout' />
   </div>
 </docs-content>
 </template>
@@ -114,11 +114,11 @@ export default {
       `,
 
       calloutProps: [
-        { name: 'type', type: 'String', required: 'false', acceptedValue: 'actionText, OOBE, peek', defaultValue: '--', description: 'the type of the callout.' },
+        { name: 'type', type: 'String', required: 'false', acceptedValue: 'actionText, OOBE, peek', description: 'the type of the callout.' },
         { name: 'position', type: 'String', required: 'false', acceptedValue: 'right, left, top, bottom', defaultValue: 'right', description: 'the position of the callout' },
-        { name: 'showClose', type: 'Boolean', required: 'false', acceptedValue: '--', defaultValue: 'false', description: 'if the close button was shown' },
-        { name: 'title', type: 'String', required: 'false', acceptedValue: '--', defaultValue: '--', description: 'the title of the callout' },
-        { name: 'content', type: 'String', required: 'false', acceptedValue: '--', defaultValue: '--', description: 'the content of the callout' }
+        { name: 'showClose', type: 'Boolean', required: 'false', defaultValue: 'false', description: 'if the close button was shown' },
+        { name: 'title', type: 'String', required: 'false', description: 'the title of the callout' },
+        { name: 'content', type: 'String', required: 'false', description: 'the content of the callout' }
       ],
 
       calloutSlot: [

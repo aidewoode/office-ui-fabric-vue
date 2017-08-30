@@ -16,7 +16,7 @@
     </docs-code-block>
   </div>
   <div slot='Implementation'>
-    <docs-props-table :data='spinnerProps' name='Spinner' />
+    <docs-table type='props' :data='spinnerProps' name='Spinner' />
   </div>
 </docs-content>
 </template>
@@ -32,8 +32,8 @@ export default {
       labelSpinnerCode: "<ou-spinner label='Loading...' />",
       largeLabelSpinnerCode: "<ou-spinner label='Loading...' type='large' />",
       spinnerProps: [
-        { name: 'type', type: 'String', required: 'false', acceptedValue: 'large', defaultValue: '--', description: 'the type for the spinner' },
-        { name: 'label', type: 'String', required: 'false', acceptedValue: '--', defaultValue: '--', description: 'the label content for the spinner' }
+        { name: 'type', type: 'String', required: 'false', acceptedValue: 'large', description: 'the type for the spinner' },
+        { name: 'label', type: 'String', required: 'false', description: 'the label content for the spinner' }
       ]
     };
   }

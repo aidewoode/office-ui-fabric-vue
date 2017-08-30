@@ -7,7 +7,7 @@
     </docs-code-block>
   </div>
   <div slot='Implementation'>
-    <docs-props-table :data='progressIndicatorProps' name='ProgressIndicator' />
+    <docs-table type='props' :data='progressIndicatorProps' name='ProgressIndicator' />
   </div>
 </docs-content>
 </template>
@@ -20,9 +20,9 @@ export default {
       overviewContent,
       defaultProgressIndicatorCode: "<ou-progress-indicator :percent='0.9' name='Example.jpg' description='Example.jpg' />",
       progressIndicatorProps: [
-        { name: 'name', type: 'String', required: 'false', acceptedValue: '--', defaultValue: '--', description: 'the name for the progress indicator' },
-        { name: 'description', type: 'String', required: 'false', acceptedValue: '--', defaultValue: '--', description: 'the description for the progress indicator' },
-        { name: 'percent', type: 'Number', required: 'false', acceptedValue: '0 ~ 1', defaultValue: '--', description: 'the percent for the progress indicator' }
+        { name: 'name', type: 'String', required: 'false', description: 'the name for the progress indicator' },
+        { name: 'description', type: 'String', required: 'false', description: 'the description for the progress indicator' },
+        { name: 'percent', type: 'Number', required: 'false', acceptedValue: '0 ~ 1', description: 'the percent for the progress indicator' }
       ]
     };
   }

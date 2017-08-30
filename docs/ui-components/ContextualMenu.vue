@@ -73,10 +73,10 @@
     </docs-code-block>
   </div>
   <div slot='Implementation'>
-    <docs-props-table :data='contextualMenuProps' name='ContextualMenu' />
-    <docs-slot-table :data='contextualMenuSlot' name='ContextualMenu' />
-    <docs-props-table :data='contextualMenuItemProps' name='ContextualMenuItem' />
-    <docs-events-table :data='contextualMenuItemEvents' name='ContextualMenuItem' />
+    <docs-table type='props' :data='contextualMenuProps' name='ContextualMenu' />
+    <docs-table type='slot' :data='contextualMenuSlot' name='ContextualMenu' />
+    <docs-table type='props' :data='contextualMenuItemProps' name='ContextualMenuItem' />
+    <docs-table type='events' :data='contextualMenuItemEvents' name='ContextualMenuItem' />
   </div>
 </docs-content>
 </template>
@@ -89,20 +89,20 @@ export default {
       overviewContent,
       test: '',
       contextualMenuProps: [
-        { name: 'v-model', type: 'Array', required: 'false', acceptedValue: '--', defaultValue: '--', description: 'bind selecting status when set value prop on contextual menu item' },
-        { name: 'type', type: 'String', required: 'false', acceptedValue: 'multiselect', defaultValue: '--', description: 'the type of the contextual menu' }
+        { name: 'v-model', type: 'Array', required: 'false', description: 'bind selecting status when set value prop on contextual menu item' },
+        { name: 'type', type: 'String', required: 'false', acceptedValue: 'multiselect', description: 'the type of the contextual menu' }
       ],
       contextualMenuSlot: [
         { name: 'list', description: 'set contextual menu item in the slot' }
       ],
       contextualMenuItemProps: [
-        { name: 'type', type: 'String', required: 'false', acceptedValue: 'divider, header, hasMenu', defaultValue: '--', description: 'the type of the contextual menu item' },
-        { name: 'disabled', type: 'Boolean', required: 'false', acceptedValue: '--', defaultValue: 'false', description: 'if the contextual menu item is disabled' },
-        { name: 'name', type: 'String', required: 'false', acceptedValue: '--', defaultValue: '--', description: 'the name of the contextual menu item' },
-        { name: 'value', type: 'String, Number', required: 'false', acceptedValue: '--', defaultValue: '--', description: 'the value of the contextual menu item to bind v-model when the type of contextual menu is multiselect' },
+        { name: 'type', type: 'String', required: 'false', acceptedValue: 'divider, header, hasMenu', description: 'the type of the contextual menu item' },
+        { name: 'disabled', type: 'Boolean', required: 'false', defaultValue: 'false', description: 'if the contextual menu item is disabled' },
+        { name: 'name', type: 'String', required: 'false', description: 'the name of the contextual menu item' },
+        { name: 'value', type: 'String, Number', required: 'false', description: 'the value of the contextual menu item to bind v-model when the type of contextual menu is multiselect' },
       ],
       contextualMenuItemEvents: [
-        { name: 'click', params: '--', description: 'the callback function when clicked' },
+        { name: 'click', description: 'the callback function when clicked' },
       ]
     };
   }

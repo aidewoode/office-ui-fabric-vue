@@ -13,7 +13,7 @@
     </docs-code-block>
   </div>
   <div slot='Implementation'>
-    <docs-props-table :data='labelProps' name='Label' />
+    <docs-table type='props' :data='labelProps' name='Label' />
   </div>
 </docs-content>
 </template>
@@ -28,8 +28,8 @@ export default {
       disabledLabelCode: '<ou-label disabled>Name</ou-label>',
       requiredLabelCode: '<ou-label required>Name</ou-label>',
       labelProps: [
-        { name: 'disabled', type: 'Boolean', required: 'false', acceptedValue: '--', defaultValue: 'false', description: 'if the label is disabled' },
-        { name: 'required', type: 'Boolean', required: 'false', acceptedValue: '--', defaultValue: 'false', description: 'if the label is required' }
+        { name: 'disabled', type: 'Boolean', required: 'false', defaultValue: 'false', description: 'if the label is disabled' },
+        { name: 'required', type: 'Boolean', required: 'false', defaultValue: 'false', description: 'if the label is required' }
       ]
     };
   }

@@ -13,9 +13,9 @@
     </docs-code-block>
   </div>
   <div slot='Implementation'>
-    <docs-props-table :data='choiceFieldGroupProps' name='ChoiceFieldGroup' />
-    <docs-props-table :data='choiceFieldProps' name='ChoiceField' />
-    <docs-slot-table :data='choiceFieldGroupSlot' name='ChoiceFieldGroup' />
+    <docs-table type='props' :data='choiceFieldGroupProps' name='ChoiceFieldGroup' />
+    <docs-table type='props' :data='choiceFieldProps' name='ChoiceField' />
+    <docs-table type='slot' :data='choiceFieldGroupSlot' name='ChoiceFieldGroup' />
   </div>
 </docs-content>
 </template>
@@ -49,12 +49,12 @@ export default {
       `,
 
       choiceFieldGroupProps: [
-        { name: 'v-model', type: 'String, Number', required: 'false', acceptedValue: '--', defaultValue: '--', description: 'bind value to the ChoiceFieldGroup' }
+        { name: 'v-model', type: 'String, Number', required: 'false', description: 'bind value to the ChoiceFieldGroup' }
       ],
 
       choiceFieldProps: [
-        { name: 'value', type: 'String, Number', required: 'false', acceptedValue: '--', defaultValue: '--', description: 'the value for the ChoiceField' },
-        { name: 'disabled', type: 'Boolean', required: 'false', acceptedValue: '--', defaultValue: 'false', description: 'if the ChoiceField is disabled' }
+        { name: 'value', type: 'String, Number', required: 'false', description: 'the value for the ChoiceField' },
+        { name: 'disabled', type: 'Boolean', required: 'false', defaultValue: 'false', description: 'if the ChoiceField is disabled' }
       ],
 
       choiceFieldGroupSlot: [

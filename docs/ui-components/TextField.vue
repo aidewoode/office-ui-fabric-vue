@@ -19,7 +19,7 @@
     </docs-code-block>
   </div>
   <div slot='Implementation'>
-    <docs-props-table :data='textFieldProps' name='TextField' />
+    <docs-table type='props' :data='textFieldProps' name='TextField' />
   </div>
 </docs-content>
 </template>
@@ -106,10 +106,10 @@ export default {
       `,
 
       textFieldProps: [
-        { name: 'v-model', type: 'String', required: 'false', acceptedValue: '--', defaultValue: '--', description: 'bind value to the textField' },
-        { name: 'type', type: 'String', required: 'false', acceptedValue: 'multiline, placeholder, underlined', defaultValue: '--', description: 'the type of the textField, when the type is placeholder, the label will be the content of placeholder' },
-        { name: 'label', type: 'String', required: 'false', acceptedValue: '--', defaultValue: '--', description: 'the label of the textField' },
-        { name: 'disabled', type: 'Boolean', required: 'false', acceptedValue: '--', defaultValue: 'false', description: 'if the textField is disabled' }
+        { name: 'v-model', type: 'String', required: 'false', description: 'bind value to the textField' },
+        { name: 'type', type: 'String', required: 'false', acceptedValue: 'multiline, placeholder, underlined', description: 'the type of the textField, when the type is placeholder, the label will be the content of placeholder' },
+        { name: 'label', type: 'String', required: 'false', description: 'the label of the textField' },
+        { name: 'disabled', type: 'Boolean', required: 'false', defaultValue: 'false', description: 'if the textField is disabled' }
       ]
     };
   }

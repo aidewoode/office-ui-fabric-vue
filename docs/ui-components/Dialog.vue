@@ -71,8 +71,8 @@
     </docs-code-block>
   </div>
   <div slot='Implementation'>
-    <docs-props-table :data='dialogProps' name='Dialog' />
-    <docs-slot-table :data='dialogSlot' name='Dialog' />
+    <docs-table type='props' :data='dialogProps' name='Dialog' />
+    <docs-table type='slot' :data='dialogSlot' name='Dialog' />
   </div>
 </docs-content>
 </template>
@@ -216,10 +216,10 @@ export default {
       `,
 
       dialogProps: [
-        { name: 'v-model', type: 'Boolean', required: 'false', acceptedValue: '--', defaultValue: 'false', description: 'bind the visibility to the dialog' },
-        { name: 'type', type: 'String', required: 'false', acceptedValue: 'multiline, lgHeader, blocking, close', defaultValue: '--', description: 'the type for the dialog' },
-        { name: 'title', type: 'String', required: 'false', acceptedValue: '--', defaultValue: '--', description: 'the title for the dialog' },
-        { name: 'subText', type: 'String', required: 'false', acceptedValue: '--', defaultValue: '--', description: 'the description for the dialog' }
+        { name: 'v-model', type: 'Boolean', required: 'false', defaultValue: 'false', description: 'bind the visibility to the dialog' },
+        { name: 'type', type: 'String', required: 'false', acceptedValue: 'multiline, lgHeader, blocking, close', description: 'the type for the dialog' },
+        { name: 'title', type: 'String', required: 'false', description: 'the title for the dialog' },
+        { name: 'subText', type: 'String', required: 'false', description: 'the description for the dialog' }
       ],
 
       dialogSlot: [

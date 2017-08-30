@@ -19,8 +19,8 @@
     </docs-code-block>
   </div>
   <div slot='Implementation'>
-    <docs-props-table :data='buttonProps' name='Button' />
-    <docs-events-table :data='buttonEvents' name='Button' />
+    <docs-table type='props' :data='buttonProps' name='Button' />
+    <docs-table type='events' :data='buttonEvents' name='Button' />
   </div>
 </docs-content>
 </template>
@@ -37,13 +37,13 @@ export default {
       compoundButtonCode: "<ou-button type='compound' description='Description of this action this button takes'>Create Account</ou-button>",
       smallButtonCode: "<ou-button type='small'>Create</ou-button>",
       buttonProps: [
-        { name: 'type', type: 'String', required: 'false', acceptedValue: 'primary, hero, compound, small', defaultValue: '--', description: 'the type of the button' },
-        { name: 'disabled', type: 'Boolean', required: 'false', acceptedValue: '--', defaultValue: 'false', description: 'if the button is disabled' },
-        { name: 'icon', type: 'String', required: 'false', acceptedValue: '--', defaultValue: '--', description: 'the icon for the hero button' },
-        { name: 'description', type: 'String', required: 'false', acceptedValue: '--', defaultValue: '--', description: 'the description for the compound button' }
+        { name: 'type', type: 'String', required: 'false', acceptedValue: 'primary, hero, compound, small', description: 'the type of the button' },
+        { name: 'disabled', type: 'Boolean', required: 'false', defaultValue: 'false', description: 'if the button is disabled' },
+        { name: 'icon', type: 'String', required: 'false', description: 'the icon for the hero button' },
+        { name: 'description', type: 'String', required: 'false', description: 'the description for the compound button' }
       ],
       buttonEvents: [
-        { name: 'click', params: '--', description: 'the callback function when clicked' }
+        { name: 'click', description: 'the callback function when clicked' }
       ]
     };
   }

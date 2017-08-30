@@ -18,8 +18,8 @@
     </docs-code-block>
   </div>
   <div slot='Implementation'>
-    <docs-props-table :data='tableProps' name='Table'/>
-    <docs-props-table :data='tableColumnProps' name='Table Column' />
+    <docs-table type='props' :data='tableProps' name='Table'/>
+    <docs-table type='props' :data='tableColumnProps' name='Table Column' />
   </div>
 </docs-content>
 </template>
@@ -86,12 +86,13 @@ export default {
       `,
 
       tableProps: [
-        { name: 'type', type: 'String', required: 'false', acceptedValue: 'fixed', defaultValue: '--', description: 'type of the table' },
-        { name: 'data', type: 'Array', required: 'true', acceptedValue: '--', defaultValue: '--', description: 'data of the table' }
+        { name: 'type', type: 'String', required: 'false', acceptedValue: 'fixed', description: 'type of the table' },
+        { name: 'data', type: 'Array', required: 'true', description: 'data of the table' },
+        { name: 'defaultValue', type: 'String, Number', required: 'false', description: 'the default value when data of table item is empty' },
       ],
 
       tableColumnProps: [
-        { name: 'prop', type: 'String', required: 'true', acceptedValue: '--', defaultValue: '--', description: 'the field name of the data for table' },
+        { name: 'prop', type: 'String', required: 'true', description: 'the field name of the data for table' },
       ]
     };
   }
