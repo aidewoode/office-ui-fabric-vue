@@ -2,19 +2,19 @@
 <docs-content title='TextField'>
   <div slot='Overview' v-html='overviewContent'></div>
   <div slot='Variants'>
-    <docs-code-block title='Default TextField' :code='defaultTextFieldCode'>
+    <docs-code-block title='Default TextField' :code='defaultCode'>
       <ou-text-field label='Name' />
     </docs-code-block>
-    <docs-code-block title='Multiline TextField' :code='multipleTextFieldCode'>
+    <docs-code-block title='Multiline TextField' :code='multipleCode'>
       <ou-text-field type='multiline' label='Name' />
     </docs-code-block>
-    <docs-code-block title='Placeholder TextField' :code='placeholderTextFieldCode'>
+    <docs-code-block title='Placeholder TextField' :code='placeholderCode'>
       <ou-text-field type='placeholder' label='Given name' />
     </docs-code-block>
-    <docs-code-block title='Underlined TextField' :code='underlinedTextFieldCode'>
+    <docs-code-block title='Underlined TextField' :code='underlinedCode'>
       <ou-text-field type='underlined' label='Name' />
     </docs-code-block>
-    <docs-code-block title='Disabled TextField' :code='disabledTextFieldCode'>
+    <docs-code-block title='Disabled TextField' :code='disabledCode'>
       <ou-text-field label='Name' disabled />
     </docs-code-block>
   </div>
@@ -25,86 +25,21 @@
 </template>
 <script>
 import overviewContent from '../markdown/text_field/overview.md';
+import defaultCode from '../markdown/text_field/defaultCode.md';
+import multipleCode from '../markdown/text_field/multipleCode.md';
+import placeholderCode from '../markdown/text_field/placeholderCode.md';
+import underlinedCode from '../markdown/text_field/underlinedCode.md';
+import disabledCode from '../markdown/text_field/disabledCode.md';
 
 export default {
   data() {
     return {
       overviewContent,
-      defaultTextFieldCode: `
-        <template>
-          <ou-text-field v-model='text' label='Name' />
-        </template>
-        <script>
-          export default {
-            date() {
-              return {
-                text: ''
-              };
-            }
-          };
-        <\/script>
-      `,
-
-      multipleTextFieldCode: `
-        <template>
-          <ou-text-field type='multiline' v-model='text' label='Name' />
-        </template>
-        <script>
-          export default {
-            date() {
-              return {
-                text: ''
-              };
-            }
-          };
-        <\/script>
-      `,
-
-      placeholderTextFieldCode: `
-        <template>
-          <ou-text-field type='placeholder' v-model='text' label='Given name' />
-        </template>
-        <script>
-          export default {
-            date() {
-              return {
-                text: ''
-              };
-            }
-          };
-        <\/script>
-      `,
-
-      underlinedTextFieldCode: `
-        <template>
-          <ou-text-field type='underlined' v-model='text' label='Name' />
-        </template>
-        <script>
-          export default {
-            date() {
-              return {
-                text: ''
-              };
-            }
-          };
-        <\/script>
-      `,
-
-      disabledTextFieldCode: `
-        <template>
-          <ou-text-field v-model='text' label='Name' disabled />
-        </template>
-        <script>
-          export default {
-            date() {
-              return {
-                text: ''
-              };
-            }
-          };
-        <\/script>
-      `,
-
+      defaultCode,
+      multipleCode,
+      placeholderCode,
+      underlinedCode,
+      disabledCode,
       textFieldProps: [
         { name: 'v-model', type: 'String', required: 'false', description: 'bind value to the textField' },
         { name: 'type', type: 'String', required: 'false', acceptedValue: 'multiline, placeholder, underlined', description: 'the type of the textField, when the type is placeholder, the label will be the content of placeholder' },

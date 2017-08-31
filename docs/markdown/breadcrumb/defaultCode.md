@@ -1,0 +1,10 @@
+```
+<ou-breadcrumb>
+  <ou-breadcrumb-item>Folder1</ou-breadcrumb-item>
+  <ou-breadcrumb-item>Folder2</ou-breadcrumb-item>
+  <ou-breadcrumb-item>Folder3</ou-breadcrumb-item>
+  <ou-breadcrumb-item>Folder4</ou-breadcrumb-item>
+  <ou-breadcrumb-item>Folder5</ou-breadcrumb-item>
+  <ou-breadcrumb-item>Folder6</ou-breadcrumb-item>
+</ou-breadcrumb>
+```

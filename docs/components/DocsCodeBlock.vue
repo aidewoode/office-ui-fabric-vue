@@ -8,9 +8,7 @@
     </button>
   </div>
   <div class='container__code ms-bgColor-neutralDark' v-show='isShowCode'>
-    <pre>
-      <code v-html='heightedCode' class='language-html'>
-      </code>
+    <pre v-html='heightedCode' class='language-html'>
     </pre>
   </div>
   <div class='container__example'>
@@ -67,7 +65,7 @@
 
 .container__code pre {
   margin: 0;
-  padding: 0;
+  padding: 15px 20px;
   border: none;
   background: none;
   box-shadow: none;
@@ -102,13 +100,20 @@ export default {
     },
 
     heightedCode() {
-      return Prism.highlight(this.code, Prism.languages.html);
+      return Prism.highlight(this.getCodeContent(), Prism.languages.html);
     }
   },
 
   methods: {
     toggleBlock() {
       this.isShowCode = !this.isShowCode;
+    },
+
+    getCodeContent() {
+      const element = document.createElement('div');
+      element.innerHTML = this.code;
+
+      return element.querySelector('code').textContent;
     }
   }
 };

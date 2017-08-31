@@ -2,7 +2,7 @@
 <docs-content title='Link'>
   <div slot='Overview' v-html='overviewContent'></div>
   <div slot='Variants'>
-    <docs-code-block title='Default Link' :code='defaultLinkCode'>
+    <docs-code-block title='Default Link' :code='defaultCode'>
       <ou-link href='#' title='More info about Example Link'>Example Link</ou-link>
     </docs-code-block>
   </div>
@@ -14,12 +14,13 @@
 </template>
 <script>
 import overviewContent from '../markdown/link/overview.md';
+import defaultCode from '../markdown/link/defaultCode.md';
 
 export default {
   data() {
     return {
       overviewContent,
-      defaultLinkCode: "<ou-link href='#' title='More info about Example Link'>Example Link</ou-link>",
+      defaultCode,
       linkProps: [
         { name: 'href', type: 'String', required: 'false', description: 'the url of the link' },
         { name: 'title', type: 'String', required: 'false', description: 'the title of the link' }

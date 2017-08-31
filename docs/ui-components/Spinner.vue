@@ -2,16 +2,16 @@
 <docs-content title='Spinner'>
   <div slot='Overview' v-html='overviewContent'></div>
   <div slot='Variants'>
-    <docs-code-block title='Default Spinner' :code='defaultSpinnerCode'>
+    <docs-code-block title='Default Spinner' :code='defaultCode'>
       <ou-spinner />
     </docs-code-block>
-    <docs-code-block title='Large Spinner' :code='largeSpinnerCode'>
+    <docs-code-block title='Large Spinner' :code='largeCode'>
       <ou-spinner type='large' />
     </docs-code-block>
-    <docs-code-block title='Spinner with Label' :code='labelSpinnerCode'>
+    <docs-code-block title='Spinner with Label' :code='labelCode'>
       <ou-spinner label='Loading...' />
     </docs-code-block>
-    <docs-code-block title='Large Spinner with Label' :code='largeLabelSpinnerCode'>
+    <docs-code-block title='Large Spinner with Label' :code='largeLabelCode'>
       <ou-spinner label='Loading...' type='large' />
     </docs-code-block>
   </div>
@@ -22,15 +22,19 @@
 </template>
 <script>
 import overviewContent from '../markdown/spinner/overview.md';
+import defaultCode from '../markdown/spinner/defaultCode.md';
+import largeCode from '../markdown/spinner/largeCode.md';
+import labelCode from '../markdown/spinner/labelCode.md';
+import largeLabelCode from '../markdown/spinner/largeLabelCode.md';
 
 export default {
   data() {
     return {
       overviewContent,
-      defaultSpinnerCode: '<ou-spinner />',
-      largeSpinnerCode: "<ou-spinner type='large' />",
-      labelSpinnerCode: "<ou-spinner label='Loading...' />",
-      largeLabelSpinnerCode: "<ou-spinner label='Loading...' type='large' />",
+      defaultCode,
+      largeCode,
+      labelCode,
+      largeLabelCode,
       spinnerProps: [
         { name: 'type', type: 'String', required: 'false', acceptedValue: 'large', description: 'the type for the spinner' },
         { name: 'label', type: 'String', required: 'false', description: 'the label content for the spinner' }

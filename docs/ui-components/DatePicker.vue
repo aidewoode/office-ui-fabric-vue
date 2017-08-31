@@ -2,7 +2,7 @@
 <docs-content title='DatePicker'>
   <div slot='Overview' v-html='overviewContent'></div>
   <div slot='Variants'>
-    <docs-code-block title='Default DatePicker' :code='defaultDatePickerCode'>
+    <docs-code-block title='Default DatePicker' :code='defaultCode'>
       <ou-date-picker label='Start date' placeholder='Select a date...' v-model='date'/>
     </docs-code-block>
   </div>
@@ -13,27 +13,14 @@
 </template>
 <script>
 import overviewContent from '../markdown/date_picker/overview.md';
+import defaultCode from '../markdown/date_picker/defaultCode.md';
 
 export default {
   data() {
     return {
       overviewContent,
       date: '',
-      defaultDatePickerCode: `
-        <template>
-          <ou-date-picker label='Start date' placeholder='Select a date...' v-model='date'/>
-        </template>
-        <script>
-          export default {
-            data() {
-              return {
-                date: ''
-              };
-            }
-          };
-        <\/script>
-      `,
-
+      defaultCode,
       datePickerProps: [
         { name: 'label', type: 'String', required: 'false', description: 'the label for the DatePicker' },
         { name: 'placeholder', type: 'String', required: 'false', description: 'the placeholder for the DatePicker' },

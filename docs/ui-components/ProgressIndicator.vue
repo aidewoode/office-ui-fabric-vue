@@ -2,7 +2,7 @@
 <docs-content title='ProgressIndicator'>
   <div slot='Overview' v-html='overviewContent'></div>
   <div slot='Variants'>
-    <docs-code-block title='Default ProgressIndicator' :code='defaultProgressIndicatorCode'>
+    <docs-code-block title='Default ProgressIndicator' :code='defaultCode'>
       <ou-progress-indicator :percent='0.9' name='Example.jpg' description='Example.jpg' />
     </docs-code-block>
   </div>
@@ -13,12 +13,13 @@
 </template>
 <script>
 import overviewContent from '../markdown/progress_indicator/overview.md';
+import defaultCode from '../markdown/progress_indicator/defaultCode.md';
 
 export default {
   data() {
     return {
       overviewContent,
-      defaultProgressIndicatorCode: "<ou-progress-indicator :percent='0.9' name='Example.jpg' description='Example.jpg' />",
+      defaultCode,
       progressIndicatorProps: [
         { name: 'name', type: 'String', required: 'false', description: 'the name for the progress indicator' },
         { name: 'description', type: 'String', required: 'false', description: 'the description for the progress indicator' },

@@ -17,6 +17,7 @@ module.exports = {
     "html"
   ],
   "globals": {
-    "fabric": true
+    "fabric": true,
+    "document": true
   }
 };

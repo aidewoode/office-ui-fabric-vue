@@ -2,14 +2,14 @@
 <docs-content title='Toggle'>
   <div slot='Overview' v-html='overviewContent'></div>
   <div slot='Variants'>
-    <docs-code-block title='Default Toggle' :code='defaultToggleCode'>
+    <docs-code-block title='Default Toggle' :code='defaultCode'>
       <ou-toggle
         v-model='toggle1'
         on-label='On'
         off-label='Off'
         description='Let apps use my location' />
     </docs-code-block>
-    <docs-code-block title='Disabled Toggle' :code='disabledToggleCode'>
+    <docs-code-block title='Disabled Toggle' :code='disabledCode'>
       <ou-toggle
         disabled
         v-model='toggle2'
@@ -17,7 +17,7 @@
         off-label='Off'
         description='Let apps use my location' />
     </docs-code-block>
-    <docs-code-block title='Text Left Toggle' :code='textLeftToggleCode'>
+    <docs-code-block title='Text Left Toggle' :code='textLeftCode'>
       <ou-toggle
         type='textLeft'
         v-model='toggle3'
@@ -33,74 +33,20 @@
 </template>
 <script>
 import overviewContent from '../markdown/toggle/overview.md';
+import defaultCode from '../markdown/toggle/defaultCode.md';
+import disabledCode from '../markdown/toggle/disabledCode.md';
+import textLeftCode from '../markdown/toggle/textLeftCode.md';
 
 export default {
   data() {
     return {
       overviewContent,
+      defaultCode,
+      disabledCode,
+      textLeftCode,
       toggle1: false,
       toggle2: false,
       toggle3: false,
-
-      defaultToggleCode: `
-        <template>
-          <ou-toggle
-            v-model='toggle'
-            on-label='On'
-            off-label='Off'
-            description='Let apps use my location' />
-        </template>
-        <script>
-          export default {
-            data() {
-              return {
-                toggle: false
-              };
-            }
-          };
-        <\/script>
-      `,
-
-      disabledToggleCode: `
-        <template>
-          <ou-toggle
-            disabled
-            v-model='toggle'
-            on-label='On'
-            off-label='Off'
-            description='Let apps use my location' />
-        </template>
-        <script>
-          export default {
-            data() {
-              return {
-                toggle: false
-              };
-            }
-          };
-        <\/script>
-      `,
-
-      textLeftToggleCode: `
-        <template>
-          <ou-toggle
-            type='textLeft'
-            v-model='toggle'
-            on-label='On'
-            off-label='Off'
-            description='Let apps use my location' />
-        </template>
-        <script>
-          export default {
-            data() {
-              return {
-                toggle: false
-              };
-            }
-          };
-        <\/script>
-      `,
-
       toggleProps: [
         { name: 'v-model', type: 'Boolean', required: 'false', description: 'bind boolean value to the toggle' },
         { name: 'on-label', type: 'String', required: 'false', description: 'the text for the toggle when the status is on' },
