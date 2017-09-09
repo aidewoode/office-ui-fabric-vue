@@ -7,9 +7,9 @@
   </li>
 </template>
 <script>
-export default {
-  props: {
-    href: String
-  }
-};
+  export default {
+    props: {
+      href: String
+    }
+  };
 </script>

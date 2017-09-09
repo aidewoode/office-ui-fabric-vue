@@ -1,19 +1,19 @@
 <template>
-<th>
-  <slot></slot>
-</th>
+  <th>
+    <slot></slot>
+  </th>
 </template>
 <script>
-export default {
-  props: {
-    prop: {
-      type: String,
-      required: true
-    }
-  },
+  export default {
+    props: {
+      prop: {
+        type: String,
+        required: true
+      }
+    },
 
-  beforeMount() {
-    this.$parent.tableColumnItems.push(this.prop);
-  }
-};
+    beforeMount() {
+      this.$parent.tableColumnItems.push(this.prop);
+    }
+  };
 </script>

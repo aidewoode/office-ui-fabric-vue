@@ -6,6 +6,7 @@ import choiceFieldGroupInstaller from './components/choice_field_group';
 import contextualMenuInstaller from './components/contextual_menu';
 import datePickerInstaller from './components/date_picker';
 import dialogInstaller from './components/dialog';
+import dropdownInstaller from './components/dropdown';
 import labelInstaller from './components/label';
 import linkInstaller from './components/link';
 import messageBarInstaller from './components/message_bar';
@@ -24,6 +25,7 @@ export default function (Vue) {
   contextualMenuInstaller(Vue);
   datePickerInstaller(Vue);
   dialogInstaller(Vue);
+  dropdownInstaller(Vue);
   labelInstaller(Vue);
   linkInstaller(Vue);
   messageBarInstaller(Vue);
