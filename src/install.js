@@ -10,6 +10,7 @@ import dropdownInstaller from './components/dropdown';
 import labelInstaller from './components/label';
 import linkInstaller from './components/link';
 import messageBarInstaller from './components/message_bar';
+import overlayInstaller from './components/overlay';
 import progressIndicatorInstaller from './components/progress_indicator';
 import spinnerInstaller from './components/spinner';
 import tableInstaller from './components/table';
@@ -29,6 +30,7 @@ export default function (Vue) {
   labelInstaller(Vue);
   linkInstaller(Vue);
   messageBarInstaller(Vue);
+  overlayInstaller(Vue);
   progressIndicatorInstaller(Vue);
   spinnerInstaller(Vue);
   tableInstaller(Vue);
