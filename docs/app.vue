@@ -33,7 +33,7 @@
     left: 0;
     background: #000;
     padding: 0 15px;
-    z-index: 100;
+    z-index: 10;
   }
 
   .wrapper {

@@ -8,10 +8,8 @@
         <router-link class='ms-fontColor-neutralSecondary ms-fontColor-neutralDark--hover nav_link' to='/GetStarted'>Get Started</router-link>
       </li>
       <li class='item ms-fontSize-l ms-fontWeight-light'>
-        <router-link class='ms-fontColor-neutralSecondary ms-fontColor-neutralDark--hover nav_link' to='/components'>
-          <span @click.prevent.stop='toggleSubNav'>Components</span>
-        </router-link>
-        <ul class='items items__submenu' v-if='subNavIsOpen'>
+        <router-link class='ms-fontColor-neutralSecondary ms-fontColor-neutralDark--hover nav_link' to='/components'>Components</router-link>
+        <ul class='items items__submenu'>
           <li class='item ms-fontSize-m ms-fontWeight-regular' v-for='componentName of allComponentsName'>
             <router-link class='ms-fontColor-neutralSecondary ms-fontColor-neutralPrimary--hover nav_link--sub' :to="'/components/' + componentName">{{ componentName }}</router-link>
           </li>
@@ -71,19 +69,9 @@
 
   export default {
     data() {
-      const allComponentsName = Object.keys(AllUIComponents);
-      const subNavIsOpen = this.$route.path.split('/').includes('components');
-
       return {
-        allComponentsName,
-        subNavIsOpen
+        allComponentsName: Object.keys(AllUIComponents)
       };
-    },
-
-    methods: {
-      toggleSubNav() {
-        this.subNavIsOpen = !this.subNavIsOpen;
-      }
     }
   };
 </script>
