@@ -14,11 +14,29 @@
   </div>
 </template>
 <style>
+  .overview_content {
+    max-width: 45em;
+  }
+
+  .overview_content h2 {
+    font-size: 21px;
+    font-weight: 100;
+    margin-bottom: 4px;
+    margin-top: 48px;
+  }
+
   .overview_content p {
     padding: 16px 0;
     margin: 0;
-    max-width: 45em;
     line-height: 1.5;
+  }
+
+  .overview_content ul {
+    padding-left: 18px;
+  }
+
+  .overview_content li {
+    margin-bottom: 16px;
   }
 </style>
 

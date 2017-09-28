@@ -12,18 +12,14 @@
   </div>
 </template>
 <script>
+  import size from '../../mixins/props/size';
+
   export default {
+    mixins: [size('md', 'lg', 'xl', 'xxl')],
+
     props: {
       value: Boolean,
       title: String,
-
-      size: {
-        type: String,
-        default: '',
-        validator(value) {
-          return ['', 'md', 'lg', 'xl', 'xxl'].includes(value);
-        }
-      },
 
       fixed: {
         type: Boolean,
