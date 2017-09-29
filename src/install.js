@@ -9,6 +9,7 @@ import dialogInstaller from './components/dialog';
 import dropdownInstaller from './components/dropdown';
 import labelInstaller from './components/label';
 import linkInstaller from './components/link';
+import messageBannerInstaller from './components/message_banner';
 import messageBarInstaller from './components/message_bar';
 import overlayInstaller from './components/overlay';
 import panelInstaller from './components/panel';
@@ -32,6 +33,7 @@ export default function (Vue) {
   dropdownInstaller(Vue);
   labelInstaller(Vue);
   linkInstaller(Vue);
+  messageBannerInstaller(Vue);
   messageBarInstaller(Vue);
   overlayInstaller(Vue);
   panelInstaller(Vue);
