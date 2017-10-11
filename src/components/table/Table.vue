@@ -15,6 +15,7 @@
   </table>
 </template>
 <script>
+  // Note: The Selectable Table haven't create
   import type from '../../mixins/props/type';
 
   export default {

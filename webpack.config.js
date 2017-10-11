@@ -1,6 +1,6 @@
 const webpack = require('webpack');
 const path = require('path');
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = function(env) {
   const distEntry = {
@@ -37,8 +37,15 @@ module.exports = function(env) {
           test: /\.vue$/,
           exclude: path.resolve(__dirname, 'node_modules'),
           use: [
-            'vue-loader',
-            'eslint-loader'
+            {
+              loader: 'vue-loader',
+              options: {
+                // when use render function in orgChart component, will get empty vnode in $slot,
+                // so use this options to remove empty vnode, see: https://github.com/vuejs/vue/issues/5329
+                preserveWhitespace: false
+              }
+            },
+            { loader: 'eslint-loader' }
           ]
         },
         {
