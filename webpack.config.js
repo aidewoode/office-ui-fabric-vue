@@ -37,15 +37,8 @@ module.exports = function(env) {
           test: /\.vue$/,
           exclude: path.resolve(__dirname, 'node_modules'),
           use: [
-            {
-              loader: 'vue-loader',
-              options: {
-                // when use render function in orgChart component, will get empty vnode in $slot,
-                // so use this options to remove empty vnode, see: https://github.com/vuejs/vue/issues/5329
-                preserveWhitespace: false
-              }
-            },
-            { loader: 'eslint-loader' }
+            'vue-loader',
+            'eslint-loader'
           ]
         },
         {
