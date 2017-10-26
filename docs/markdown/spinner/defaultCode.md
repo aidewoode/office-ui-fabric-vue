@@ -1,1 +1,3 @@
-`<ou-spinner />`
+```
+  <ou-spinner />
+```

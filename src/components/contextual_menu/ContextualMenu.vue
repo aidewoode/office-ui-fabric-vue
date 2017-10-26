@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class='inline-block'>
     <span class='inline-block' ref='contextualMenuTrigger'>
       <slot />
     </span>

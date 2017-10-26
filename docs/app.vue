@@ -2,6 +2,9 @@
   <div class='ms-font-m'>
     <header class='header'>
       <div class='ms-fontColor-white ms-fontSize-xl'>Office UI Fabric Vue</div>
+      <a href='https://github.com/aidewoode/office-ui-fabric-vue' class='header__icon'>
+        <img src='docs/assets/img/github-logo.svg' />
+      </a>
     </header>
     <div class='wrapper'>
       <div class='nav'>
@@ -44,6 +47,7 @@
   .header {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     height: 50px;
     position: fixed;
     top: 0;
@@ -52,6 +56,10 @@
     background: #000;
     padding: 0 15px;
     z-index: 10;
+  }
+
+  .header__icon {
+    display: flex;
   }
 
   .wrapper {

@@ -1,1 +1,3 @@
-`<ou-label>Name</ou-label>`
+```
+  <ou-label>Name</ou-label>
+```

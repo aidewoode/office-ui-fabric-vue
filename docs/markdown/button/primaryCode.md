@@ -1,1 +1,3 @@
-`<ou-button type='primary'>Create Account</ou-button>`
+```
+  <ou-button type='primary'>Create Account</ou-button>
+```

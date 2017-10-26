@@ -1,6 +1,6 @@
 {
   "name": "office-ui-fabric-vue",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Office UI Fabric implementation for Vue.js",
   "main": "dist/index.js",
   "author": "aidewoode <aidewoode@gmail.com>",

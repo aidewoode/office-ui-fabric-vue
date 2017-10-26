@@ -7,15 +7,30 @@
         <span class='container__header--button-label'>{{ buttonTitle }}</span>
       </button>
     </div>
-    <div class='container__code ms-bgColor-neutralDark' v-show='isShowCode'>
-      <pre v-html='heightedCode' class='language-html'>
-      </pre>
+    <div class='container__code ms-bgColor-neutralDark' v-show='isShowCode' v-html='code'>
     </div>
     <div class='container__example'>
       <slot></slot>
     </div>
   </div>
 </template>
+<style>
+  .container__code pre {
+    line-height: 1.5;
+    margin: 0;
+    padding: 15px 20px;
+    border: none;
+    background: none;
+    box-shadow: none;
+    max-height: 450px;
+    overflow: auto;
+    color: #fff;
+  }
+
+  .container__code pre code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+</style>
 <style scoped>
   .container {
     margin: 45px 5px;
@@ -62,20 +77,8 @@
   .container__example {
     margin-top: 30px;
   }
-
-  .container__code pre {
-    margin: 0;
-    padding: 15px 20px;
-    border: none;
-    background: none;
-    box-shadow: none;
-    max-height: 450px;
-    overflow: auto;
-  }
 </style>
 <script>
-  import Prism from 'prismjs';
-
   export default {
     props: {
       title: {
@@ -97,23 +100,12 @@
     computed: {
       buttonTitle() {
         return this.isShowCode ? 'Hide code' : 'Show code';
-      },
-
-      heightedCode() {
-        return Prism.highlight(this.getCodeContent(), Prism.languages.html);
       }
     },
 
     methods: {
       toggleBlock() {
         this.isShowCode = !this.isShowCode;
-      },
-
-      getCodeContent() {
-        const element = document.createElement('div');
-        element.innerHTML = this.code;
-
-        return element.querySelector('code').textContent;
       }
     }
   };

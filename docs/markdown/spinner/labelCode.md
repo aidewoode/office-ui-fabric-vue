@@ -1,1 +1,3 @@
-`<ou-spinner label='Loading...' />`
+```
+  <ou-spinner label='Loading...' />
+```

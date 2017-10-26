@@ -1,6 +1,7 @@
 const webpack = require('webpack');
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const prism = require('prismjs');
 
 module.exports = function(env) {
   const distEntry = {
@@ -64,8 +65,17 @@ module.exports = function(env) {
         {
           test: /\.md$/,
           use: [
-            'html-loader',
-            'markdown-loader'
+            {
+              loader: 'html-loader'
+            },
+            {
+              loader: 'markdown-loader',
+              options: {
+                highlight: function (code) {
+                  return prism.highlight(code, prism.languages.html);
+                }
+              }
+            }
           ]
         }
       ]

@@ -3,6 +3,8 @@ import buttonInstaller from './components/button';
 import calloutInstaller from './components/callout';
 import checkboxInstaller from './components/checkbox';
 import choiceFieldGroupInstaller from './components/choice_field_group';
+import commandBarInstaller from './components/command_bar';
+import commandButtonInstaller from './components/command_button';
 import contextualMenuInstaller from './components/contextual_menu';
 import datePickerInstaller from './components/date_picker';
 import dialogInstaller from './components/dialog';
@@ -29,6 +31,8 @@ export default function (Vue) {
   calloutInstaller(Vue);
   checkboxInstaller(Vue);
   choiceFieldGroupInstaller(Vue);
+  commandBarInstaller(Vue);
+  commandButtonInstaller(Vue);
   contextualMenuInstaller(Vue);
   datePickerInstaller(Vue);
   dialogInstaller(Vue);
