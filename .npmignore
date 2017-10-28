@@ -1,0 +1,9 @@
+docs
+src
+dist/index.docs.css
+dist/index.docs.js
+.babelrc
+.eslintrc.js
+webpack.config.js
+yarn.lock
+index.html

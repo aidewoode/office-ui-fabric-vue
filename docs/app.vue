@@ -21,6 +21,11 @@
     max-width: 45em;
   }
 
+  .overview_content h1 {
+    font-size: 36px;
+    font-weight: 100;
+  }
+
   .overview_content h2 {
     font-size: 21px;
     font-weight: 100;
@@ -40,6 +45,24 @@
 
   .overview_content li {
     margin-bottom: 16px;
+  }
+
+  .overview_content pre {
+    line-height: 1.5;
+    margin: 0;
+    margin-top: 25px;
+    padding: 15px 20px;
+    border: none;
+    background: #212121;
+    box-shadow: none;
+    max-height: 450px;
+    overflow: auto;
+    color: #fff;
+  }
+
+  .overview_content a {
+    color: #0078d7;
+    text-decoration: none;
   }
 </style>
 

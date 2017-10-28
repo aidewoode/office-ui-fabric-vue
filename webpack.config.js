@@ -71,8 +71,9 @@ module.exports = function(env) {
             {
               loader: 'markdown-loader',
               options: {
-                highlight: function (code) {
-                  return prism.highlight(code, prism.languages.html);
+                highlight: function (code, lang) {
+                  if (typeof(lang) == 'undefined') { lang = 'markup'; }
+                  return prism.highlight(code, prism.languages[lang]);
                 }
               }
             }
