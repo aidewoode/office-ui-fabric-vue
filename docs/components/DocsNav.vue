@@ -8,7 +8,7 @@
         <router-link class='ms-fontColor-neutralSecondary ms-fontColor-neutralDark--hover nav_link' to='/GetStarted'>Get Started</router-link>
       </li>
       <li class='item ms-fontSize-l ms-fontWeight-light'>
-        <router-link class='ms-fontColor-neutralSecondary ms-fontColor-neutralDark--hover nav_link' to='/components'>Components</router-link>
+        <router-link class='ms-fontColor-neutralSecondary ms-fontColor-neutralDark--hover nav_link' :to="'/components/' + allComponentsName[0]">Components</router-link>
         <ul class='items items__submenu'>
           <li class='item ms-fontSize-m ms-fontWeight-regular' v-for='componentName of allComponentsName'>
             <router-link class='ms-fontColor-neutralSecondary ms-fontColor-neutralPrimary--hover nav_link--sub' :to="'/components/' + componentName">{{ componentName }}</router-link>
