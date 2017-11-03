@@ -4,14 +4,14 @@
     <textarea
       v-if="type == 'multiline'"
       class='ms-TextField-field'
-      type='text'
+      v-bind:type="input-type"
       :value='value'
       @input='updateValue'
       :disabled='disabled'></textarea>
     <input
       v-else
       class='ms-TextField-field'
-      type='text'
+      v-bind:type="input-type"
       :value='value'
       @input='updateValue'
       :disabled='disabled' />
@@ -25,6 +25,11 @@
     mixins: [type('multiline', 'underlined', 'placeholder'), disabled],
 
     props: {
+      inputType: {
+        type: String,
+        default: 'text',
+        required: true
+      },
       value: String,
       label: String
     },
