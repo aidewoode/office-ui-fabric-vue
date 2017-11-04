@@ -3,6 +3,7 @@
     <label class='ms-Label'>{{ label }}</label>
     <textarea
       v-if="type == 'multiline'"
+      :placeholder='placeholder'
       class='ms-TextField-field'
       type='text'
       :value='value'
@@ -10,8 +11,9 @@
       :disabled='disabled'></textarea>
     <input
       v-else
+      :placeholder='placeholder'
       class='ms-TextField-field'
-      type='text'
+      :type='inputType'
       :value='value'
       @input='updateValue'
       :disabled='disabled' />
@@ -22,11 +24,19 @@
   import disabled from '../../mixins/props/disabled';
 
   export default {
-    mixins: [type('multiline', 'underlined', 'placeholder'), disabled],
+    mixins: [type('multiline', 'underlined'), disabled],
 
     props: {
       value: String,
-      label: String
+      label: String,
+      placeholder: String,
+      inputType: {
+        type: String,
+        default: 'text',
+        validator(value) {
+          return ['text', 'password', 'file'].includes(value);
+        }
+      }
     },
 
     computed: {

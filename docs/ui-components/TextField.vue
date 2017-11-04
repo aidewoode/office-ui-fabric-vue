@@ -9,7 +9,7 @@
         <ou-text-field type='multiline' label='Name' />
       </docs-code-block>
       <docs-code-block title='Placeholder TextField' :code='placeholderCode'>
-        <ou-text-field type='placeholder' label='Given name' />
+        <ou-text-field placeholder='Given name' />
       </docs-code-block>
       <docs-code-block title='Underlined TextField' :code='underlinedCode'>
         <ou-text-field type='underlined' label='Name' />
@@ -42,7 +42,8 @@
         disabledCode,
         textFieldProps: [
           { name: 'v-model', type: 'String', required: 'false', description: 'bind value to the textField' },
-          { name: 'type', type: 'String', required: 'false', acceptedValue: 'multiline, placeholder, underlined', description: 'the type of the textField, when the type is placeholder, the label will be the content of placeholder' },
+          { name: 'type', type: 'String', required: 'false', acceptedValue: 'multiline, placeholder, underlined', description: 'the type of the textField' },
+          { name: 'input-type', type: 'String', defaultValue: 'text', required: 'false', acceptedValue: 'text, password, file', description: 'the input type of the textField' },
           { name: 'label', type: 'String', required: 'false', description: 'the label of the textField' },
           { name: 'disabled', type: 'Boolean', required: 'false', defaultValue: 'false', description: 'if the textField is disabled' }
         ]

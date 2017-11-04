@@ -1,6 +1,6 @@
 ```
 <template>
-  <ou-text-field type='placeholder' v-model='text' label='Given name' />
+  <ou-text-field v-model='text' placeholder='Given name' />
 </template>
 <script>
   export default {
