@@ -47,10 +47,6 @@
     border-color: #212121;
   }
 
-  .container__header--title {
-    margin-bottom: 8px;
-  }
-
   .container__header--button {
     display: flex;
     align-items: center;
@@ -76,6 +72,21 @@
 
   .container__example {
     margin-top: 30px;
+  }
+
+  @media (max-width: 479px) {
+    .container__header--title {
+      font-size: 14px;
+    }
+
+    .container__header--button {
+      padding: 5px;
+    }
+
+    .container__header--button-label {
+      font-size: 14px;
+      font-weight: 100;
+    }
   }
 </style>
 <script>

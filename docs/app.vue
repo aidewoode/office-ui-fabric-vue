@@ -1,17 +1,24 @@
 <template>
   <div class='ms-font-m'>
     <header class='header'>
-      <div class='ms-fontColor-white ms-fontSize-xl'>Office UI Fabric Vue</div>
+      <div class='header__title'>
+        <docs-panel-nav />
+        <div class='header__title--content ms-fontColor-white ms-fontSize-xl ms-fontWeight-light'>Office UI Fabric Vue</div>
+      </div>
       <a href='https://github.com/aidewoode/office-ui-fabric-vue' class='header__icon'>
         <img src='docs/assets/img/github-logo.svg' />
       </a>
     </header>
     <div class='wrapper'>
-      <div class='nav'>
-        <docs-nav />
-      </div>
-      <div class='content ms-bgColor-neutralLighterAlt'>
-        <router-view />
+      <div class='ms-Grid'>
+        <div class='ms-Grid-row'>
+          <div class='ms-Grid-col ms-u-hiddenSm ms-u-md4 ms-u-lg3 wrapper__content'>
+            <docs-nav />
+          </div>
+          <div class='ms-Grid-col ms-u-sm12 ms-u-md8 ms-u-lg9 ms-bgColor-neutralLighterAlt wrapper__content'>
+            <router-view />
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -81,31 +88,40 @@
     z-index: 10;
   }
 
+  .header__title {
+    display: flex;
+    align-items: center;
+  }
+
   .header__icon {
     display: flex;
   }
 
   .wrapper {
-    display: flex;
     margin: 0 auto;
     max-width: 1300px;
     padding-top: 50px;
   }
 
-  .nav {
-    width: 208px;
+  .wrapper__content {
+    padding: 0;
+    overflow: hidden;
   }
 
-  .content {
-    width: calc(100% - 208px);
+  @media (max-width: 479px) {
+    .header__title--content {
+      font-size: 17px;
+    }
   }
 </style>
 <script>
   import DocsNav from './components/DocsNav.vue';
+  import DocsPanelNav from './components/DocsPanelNav.vue';
 
   export default {
     components: {
-      DocsNav
+      DocsNav,
+      DocsPanelNav
     }
   };
 </script>

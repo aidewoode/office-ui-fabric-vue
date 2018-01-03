@@ -44,6 +44,7 @@
 
   .nav_link {
     display: flex;
+    position: relative;
     align-items: center;
   }
 
@@ -54,7 +55,9 @@
   .nav_link.router-link-active:before {
     content: '';
     position: absolute;
-    left: 20px;
+    left: -18px;
+    top: 0;
+    bottom: 0;
     width: 2px;
     height: 20px;
     background: #107c10;

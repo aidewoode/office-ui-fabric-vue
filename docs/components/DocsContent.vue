@@ -35,6 +35,7 @@
   .header__title {
     padding: 90px 0 40px 0;
     font-size: 72px;
+    word-wrap: break-word;
   }
 
   .header__nav {
@@ -78,6 +79,71 @@
   .content__title {
     margin: 10px 0 24px;
     font-size: 36px;
+  }
+
+  @media (max-width: 479px) {
+    .header {
+      padding: 0 20px 15px;
+    }
+
+    .header__nav {
+      margin-left: 3px;
+    }
+
+    .header__nav--item {
+      font-size: 14px;
+      margin-right: 17px;
+    }
+
+    .header__title {
+      font-size: 28px;
+      padding: 50px 0 20px 0;
+    }
+
+    .content {
+      padding: 20px;
+    }
+
+    .content__title {
+      font-size: 21px;
+      margin-bottom: 10px;
+    }
+  }
+
+  @media (min-width: 480px) and (max-width: 639px) {
+    .header {
+      padding: 0 25px 15px;
+    }
+
+    .header__nav {
+      margin-left: 4px;
+    }
+
+    .header__nav--item {
+      font-size: 14px;
+      margin-right: 20px;
+    }
+
+    .header__title {
+      font-size: 42px;
+      padding: 60px 0 30px 0;
+    }
+
+    .content {
+      padding: 25px;
+    }
+
+    .content__title {
+      font-size: 21px;
+      margin-bottom: 10px;
+    }
+  }
+
+  @media (min-width: 640px) and (max-width: 1023px) {
+    .header__title {
+      font-size: 52px;
+      padding-top: 70px;
+    }
   }
 </style>
 <script>

@@ -17,6 +17,17 @@
 <style scoped>
   .container {
     margin-bottom: 25px;
+    overflow: auto;
+  }
+
+  .container table {
+    min-width: 600px;
+  }
+
+  @media (max-width: 479px) {
+    .container h3 {
+      font-size: 14px;
+    }
   }
 </style>
 <script>
