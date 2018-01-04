@@ -125,7 +125,7 @@
     }
 
     .header__title {
-      font-size: 42px;
+      font-size: 32px;
       padding: 60px 0 30px 0;
     }
 

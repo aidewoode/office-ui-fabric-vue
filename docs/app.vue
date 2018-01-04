@@ -10,15 +10,11 @@
       </a>
     </header>
     <div class='wrapper'>
-      <div class='ms-Grid'>
-        <div class='ms-Grid-row'>
-          <div class='ms-Grid-col ms-u-hiddenSm ms-u-md4 ms-u-lg3 wrapper__content'>
-            <docs-nav />
-          </div>
-          <div class='ms-Grid-col ms-u-sm12 ms-u-md8 ms-u-lg9 ms-bgColor-neutralLighterAlt wrapper__content'>
-            <router-view />
-          </div>
-        </div>
+      <div class='ms-u-hiddenSm ms-u-md4 ms-u-lg3 wrapper__content'>
+        <docs-nav />
+      </div>
+      <div class='ms-u-sm12 ms-u-md8 ms-u-lg9 ms-bgColor-neutralLighterAlt wrapper__content wrapper__content--main'>
+        <router-view />
       </div>
     </div>
   </div>
@@ -71,6 +67,16 @@
     color: #0078d7;
     text-decoration: none;
   }
+
+  @media (max-width: 479px) {
+    .overview_content h1 {
+      font-size: 26px;
+    }
+
+    .wrapper__content--main {
+      background: #fff;
+    }
+  }
 </style>
 
 <style scoped>
@@ -98,6 +104,7 @@
   }
 
   .wrapper {
+    display: flex;
     margin: 0 auto;
     max-width: 1300px;
     padding-top: 50px;

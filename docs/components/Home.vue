@@ -35,4 +35,43 @@
   .button:hover {
     opacity: .8;
   }
+
+  @media (max-width: 479px) {
+    .title {
+      font-size: 28px;
+      margin-bottom: 30px;
+    }
+
+    .sub_title {
+      font-size: 14px;
+    }
+
+    .button {
+      padding: 5px 10px 8px 10px;
+      font-size: 14px;
+    }
+  }
+
+  @media (min-width: 480px) and (max-width: 639px) {
+    .title {
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+
+    .sub_title {
+      font-size: 16px;
+    }
+
+    .button {
+      padding: 6px 13px 8px 13px;
+      font-size: 16px;
+    }
+  }
+
+  @media (min-width: 640px) and (max-width: 1023px) {
+    .title {
+      font-size: 52px;
+      margin-bottom: 15px;
+    }
+  }
 </style>
