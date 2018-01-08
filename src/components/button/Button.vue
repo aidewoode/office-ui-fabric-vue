@@ -1,10 +1,12 @@
 <template>
   <button class='ms-Button' :class='buttonClass' @click='clickEvent'>
-    <span class='ms-Button-icon' v-if='icon'>
+    <span class='ms-Button-icon' v-if="icon && type == 'hero'">
       <i class='ms-Icon' :class='iconClass'></i>
     </span>
     <span class='ms-Button-label'><slot /></span>
-    <span class='ms-Button-description' v-if='description'>{{ description }}</span>
+    <span class='ms-Button-description' v-if="description && type == 'compound'">
+      {{ description }}
+    </span>
   </button>
 </template>
 <script>
@@ -34,7 +36,7 @@
 
     methods: {
       clickEvent() {
-        this.$emit('click');
+        if (!this.disabled) { this.$emit('click'); }
       }
     }
   };
