@@ -22,7 +22,7 @@
     },
 
     mounted() {
-      new fabric.Spinner(this.$refs.spinner);
+      new this.$fabric.Spinner(this.$refs.spinner);
     }
   };
 </script>

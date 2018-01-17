@@ -44,16 +44,14 @@ module.exports = function(env) {
         },
         {
           test: /\.js$/,
-          exclude: path.resolve(__dirname, 'node_modules'),
+          exclude: [
+            path.resolve(__dirname, 'node_modules'),
+            path.resolve(__dirname, 'lib'),
+          ],
           use: [
             'babel-loader',
             'eslint-loader'
           ]
-        },
-        {
-          test: /\.js$/,
-          include: path.resolve(__dirname, 'node_modules/office-ui-fabric-js/dist'),
-          use: ['script-loader']
         },
         {
           test: /\.css$/,

@@ -40,7 +40,7 @@
     },
 
     mounted() {
-      new fabric.Toggle(this.$refs.toggle);
+      new this.$fabric.Toggle(this.$refs.toggle);
     },
 
     methods: {

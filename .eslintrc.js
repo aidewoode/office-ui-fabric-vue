@@ -10,6 +10,7 @@ module.exports = {
     "arrow-body-style": "off",
     "no-useless-escape": "off",
     "no-underscore-dangle": "off",
+    "no-param-reassign": "off",
     "consistent-return": "off",
     "default-case": "off",
     "no-unused-expressions": ["error", { "allowTernary": true }]

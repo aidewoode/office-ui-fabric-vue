@@ -61,7 +61,7 @@
     methods: {
       setPanelVisibility() {
         if (this.value) {
-          this.panelInstance = new fabric.Panel(this.$refs.panel);
+          this.panelInstance = new this.$fabric.Panel(this.$refs.panel);
           this.bindOverlayCloseEvent();
         } else if (this.panelInstance) {
           this.panelInstance.dismiss();

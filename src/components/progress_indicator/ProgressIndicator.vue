@@ -35,7 +35,9 @@
     },
 
     mounted() {
-      this.progressIndicatorInstance = new fabric.ProgressIndicator(this.$refs.progressIndicator);
+      const progressIndicatorElement = this.$refs.progressIndicator;
+
+      this.progressIndicatorInstance = new this.$fabric.ProgressIndicator(progressIndicatorElement);
       this.setProgressIndicator();
     },
 

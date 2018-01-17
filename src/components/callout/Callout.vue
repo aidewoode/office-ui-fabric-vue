@@ -58,7 +58,7 @@
     },
 
     mounted() {
-      new fabric.Callout(
+      new this.$fabric.Callout(
         this.$refs.callout,
         this.$refs.calloutTrigger,
         this.position

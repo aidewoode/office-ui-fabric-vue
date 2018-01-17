@@ -53,7 +53,7 @@
     },
 
     mounted() {
-      this.dialogInstance = new fabric.Dialog(this.$refs.dialog);
+      this.dialogInstance = new this.$fabric.Dialog(this.$refs.dialog);
       this.setDialogVisibility(this.value);
     },
 

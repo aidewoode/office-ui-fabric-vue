@@ -76,7 +76,7 @@
     },
 
     mounted() {
-      this.datePickerInstance = new fabric.DatePicker(this.$refs.datePicker).picker;
+      this.datePickerInstance = new this.$fabric.DatePicker(this.$refs.datePicker).picker;
 
       if (this.value) {
         this.setPickerValue(this.value);

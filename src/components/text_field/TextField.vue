@@ -49,7 +49,7 @@
     },
 
     mounted() {
-      new fabric.TextField(this.$refs.textField);
+      new this.$fabric.TextField(this.$refs.textField);
     },
 
     methods: {

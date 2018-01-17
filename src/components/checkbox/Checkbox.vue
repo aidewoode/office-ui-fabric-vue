@@ -35,7 +35,7 @@
     },
 
     mounted() {
-      this.checkboxInstance = new fabric.CheckBox(this.$refs.checkbox);
+      this.checkboxInstance = new this.$fabric.CheckBox(this.$refs.checkbox);
       this.setCheck();
     },
 

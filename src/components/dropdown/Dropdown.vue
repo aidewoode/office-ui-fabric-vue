@@ -30,7 +30,7 @@
     },
 
     mounted() {
-      new fabric.Dropdown(this.$refs.dropdown);
+      new this.$fabric.Dropdown(this.$refs.dropdown);
 
       this.setDropdownTitle(this.placeholder);
       this.setSelectItem();

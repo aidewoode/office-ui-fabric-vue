@@ -39,7 +39,7 @@
     },
 
     mounted() {
-      new fabric.Pivot(this.$refs.pivot);
+      new this.$fabric.Pivot(this.$refs.pivot);
     }
   };
 </script>

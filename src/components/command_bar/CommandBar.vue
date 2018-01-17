@@ -23,7 +23,7 @@
 <script>
   export default {
     mounted() {
-      new fabric.CommandBar(this.$refs.commandBar);
+      new this.$fabric.CommandBar(this.$refs.commandBar);
     }
   };
 </script>

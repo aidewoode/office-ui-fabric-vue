@@ -22,7 +22,7 @@
 
     mounted() {
       this.setChildrenValue();
-      new fabric.ChoiceFieldGroup(this.$refs.choiceFieldGroup);
+      new this.$fabric.ChoiceFieldGroup(this.$refs.choiceFieldGroup);
     },
 
     methods: {

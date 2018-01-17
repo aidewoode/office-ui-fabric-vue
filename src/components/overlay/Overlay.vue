@@ -32,7 +32,7 @@
     },
 
     mounted() {
-      this.overlayInstance = new fabric.Overlay(this.$refs.overlay);
+      this.overlayInstance = new this.$fabric.Overlay(this.$refs.overlay);
 
       this.setOverlayVisibility();
       this.bindOverlayCloseEvent();

@@ -45,7 +45,7 @@
     },
 
     mounted() {
-      new fabric.SearchBox(this.$refs.searchBox);
+      new this.$fabric.SearchBox(this.$refs.searchBox);
     },
 
     methods: {

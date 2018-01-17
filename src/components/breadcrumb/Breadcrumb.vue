@@ -15,7 +15,7 @@
 <script>
   export default {
     mounted() {
-      new fabric.Breadcrumb(this.$refs.breadcrumb);
+      new this.$fabric.Breadcrumb(this.$refs.breadcrumb);
     }
   };
 </script>

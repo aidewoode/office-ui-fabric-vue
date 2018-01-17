@@ -40,7 +40,7 @@
     mounted() {
       this.setChildrenValue();
 
-      new fabric.ContextualMenu(
+      new this.$fabric.ContextualMenu(
         this.$refs.contextualMenu,
         this.$refs.contextualMenuTrigger
       );

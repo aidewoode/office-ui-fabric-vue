@@ -1,13 +1,9 @@
-import 'office-ui-fabric-js/dist/js/fabric';
-
-// jquery and PickaDate are used for the DatePicker component.
-import 'office-ui-fabric-js/dist/lib/jquery';
-import 'office-ui-fabric-js/dist/lib/PickaDate';
-
+import fabric from '../lib/office-ui-fabric';
 import componentsInstaller from './install';
 
 const OfficeUIFabricVue = {
   install(Vue) {
+    Vue.prototype.$fabric = fabric;
     componentsInstaller(Vue);
   }
 };

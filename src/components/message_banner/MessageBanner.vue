@@ -23,7 +23,7 @@
     },
 
     mounted() {
-      new fabric.MessageBanner(this.$refs.messageBanner);
+      new this.$fabric.MessageBanner(this.$refs.messageBanner);
     }
   };
 </script>
