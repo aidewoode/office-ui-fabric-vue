@@ -54,10 +54,11 @@
     display: inline-block;
     text-decoration: none;
     margin-right: 28px;
+    cursor: pointer;
   }
 
   .header__nav--item:hover {
-    font-weight: 600;
+    transform: scale(1.1);
   }
 
   .header__nav--item:after {
