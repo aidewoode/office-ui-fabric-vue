@@ -55,10 +55,11 @@
     text-decoration: none;
     margin-right: 28px;
     cursor: pointer;
+    text-align: center;
   }
 
   .header__nav--item:hover {
-    transform: scale(1.1);
+    font-weight: 600;
   }
 
   .header__nav--item:after {
