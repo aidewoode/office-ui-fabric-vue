@@ -54,6 +54,8 @@
     display: inline-block;
     text-decoration: none;
     margin-right: 28px;
+    cursor: pointer;
+    text-align: center;
   }
 
   .header__nav--item:hover {
