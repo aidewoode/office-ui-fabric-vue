@@ -5,7 +5,11 @@ describe('Button', () => {
   let wrapper;
 
   beforeEach(() => {
-    wrapper = mount(Button);
+    wrapper = mount(Button, {
+      slots: {
+        default: 'button'
+      }
+    });
   });
 
   afterEach(() => {
@@ -13,7 +17,8 @@ describe('Button', () => {
   });
 
   test('should render correct', () => {
-    expect(wrapper.contains('button.ms-Button')).toBeTruthy();
+    expect(wrapper.contains('.ms-Button')).toBeTruthy();
+    expect(wrapper.find('.ms-Button-label').text()).toBe('button');
   });
 
   test('should can be disabled', () => {
@@ -23,7 +28,7 @@ describe('Button', () => {
     wrapper.setProps({ disabled: true });
     wrapper.trigger('click');
 
-    expect(clickEvent.mock.calls.length).toBe(0);
+    expect(clickEvent).not.toBeCalled();
   });
 
   test('should has click event', () => {
@@ -32,7 +37,7 @@ describe('Button', () => {
     wrapper.vm.$on('click', clickEvent);
     wrapper.trigger('click');
 
-    expect(clickEvent.mock.calls.length).toBe(1);
+    expect(clickEvent).toBeCalled();
   });
 
   test('should add icon only for hero button', () => {
