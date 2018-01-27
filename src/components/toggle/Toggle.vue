@@ -21,6 +21,8 @@
   import disabled from '../../mixins/props/disabled';
 
   export default {
+    name: 'ou-toggle',
+
     mixins: [type('textLeft'), disabled],
 
     props: {

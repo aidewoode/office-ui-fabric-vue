@@ -5,6 +5,8 @@
 </template>
 <script>
   export default {
+    name: 'ou-table-column',
+
     props: {
       prop: {
         type: String,

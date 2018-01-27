@@ -22,6 +22,8 @@
 </template>
 <script>
   export default {
+    name: 'ou-command-bar',
+
     mounted() {
       new this.$fabric.CommandBar(this.$refs.commandBar);
     }

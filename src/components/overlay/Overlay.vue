@@ -5,6 +5,8 @@
   import type from '../../mixins/props/type';
 
   export default {
+    name: 'ou-overlay',
+
     mixins: [type('dark')],
 
     props: {

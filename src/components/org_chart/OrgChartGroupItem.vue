@@ -5,6 +5,8 @@
 </template>
 <script>
   export default {
+    name: 'ou-org-chart-group-item',
+
     methods: {
       clickEvent() {
         this.$emit('click');

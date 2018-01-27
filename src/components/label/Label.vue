@@ -5,6 +5,8 @@
   import disabled from '../../mixins/props/disabled';
 
   export default {
+    name: 'ou-label',
+
     mixins: [disabled],
 
     props: {

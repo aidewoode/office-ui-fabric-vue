@@ -11,6 +11,8 @@
   import disabled from '../../mixins/props/disabled';
 
   export default {
+    name: 'ou-dropdown',
+
     mixins: [disabled],
 
     props: {

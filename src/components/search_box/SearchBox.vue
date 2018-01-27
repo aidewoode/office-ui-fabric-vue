@@ -17,6 +17,8 @@
   import type from '../../mixins/props/type';
 
   export default {
+    name: 'ou-search-box',
+
     mixins: [type('commandBar')],
 
     props: {

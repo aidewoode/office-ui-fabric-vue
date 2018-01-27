@@ -7,6 +7,8 @@
   import type from '../../mixins/props/type';
 
   export default {
+    name: 'ou-spinner',
+
     mixins: [type('large')],
 
     props: {

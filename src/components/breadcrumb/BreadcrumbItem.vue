@@ -8,6 +8,8 @@
 </template>
 <script>
   export default {
+    name: 'ou-breadcrumb-item',
+
     props: {
       href: String
     }

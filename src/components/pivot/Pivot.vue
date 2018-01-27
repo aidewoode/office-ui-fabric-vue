@@ -18,6 +18,8 @@
   import type from '../../mixins/props/type';
 
   export default {
+    name: 'ou-pivot',
+
     mixins: [
       size('large'),
       type('tabs')

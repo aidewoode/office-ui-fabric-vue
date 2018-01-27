@@ -10,6 +10,8 @@
 </template>
 <script>
   export default {
+    name: 'ou-progress-indicator',
+
     props: {
       name: String,
       description: String,

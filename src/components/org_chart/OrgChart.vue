@@ -3,3 +3,8 @@
     <slot />
   </div>
 </template>
+<script>
+  export default {
+    name: 'ou-org-chart'
+  };
+</script>

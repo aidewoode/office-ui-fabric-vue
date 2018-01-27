@@ -15,6 +15,8 @@
   import icon from '../../mixins/props/icon';
 
   export default {
+    name: 'ou-button',
+
     mixins: [
       type('primary', 'hero', 'compound', 'small'),
       disabled,

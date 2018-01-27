@@ -20,6 +20,8 @@
   import type from '../../mixins/props/type';
 
   export default {
+    name: 'ou-dialog',
+
     mixins: [type('multiline', 'lgHeader', 'blocking', 'close')],
 
     props: {

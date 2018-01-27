@@ -17,6 +17,8 @@
   import icon from '../../mixins/props/icon';
 
   export default {
+    name: 'ou-command-button',
+
     mixins: [
       type('noLabel', 'inline', 'dropdown'),
       disabled,

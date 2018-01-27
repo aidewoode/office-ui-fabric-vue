@@ -21,6 +21,8 @@
   import type from '../../mixins/props/type';
 
   export default {
+    name: 'ou-persona',
+
     mixins: [
       size('tiny', 'xs', 'sm', 'lg', 'xl'),
       type('available', 'away', 'blocked', 'busy', 'dnd', 'offline')

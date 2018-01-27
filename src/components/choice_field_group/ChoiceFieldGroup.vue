@@ -10,18 +10,20 @@
 </template>
 <script>
   export default {
+    name: 'ou-choice-field-group',
+
     props: {
       value: [String, Number]
     },
 
     watch: {
       value() {
-        this.setChildrenValue();
+        this.setChoiceFields();
       }
     },
 
     mounted() {
-      this.setChildrenValue();
+      if (typeof this.value != 'undefined') { this.setChoiceFields(); }
       new this.$fabric.ChoiceFieldGroup(this.$refs.choiceFieldGroup);
     },
 
@@ -30,10 +32,16 @@
         this.$emit('input', value);
       },
 
-      setChildrenValue() {
-        this.$children.forEach((child) => {
+      setChoiceFields() {
+        const choiceFields = this.$children.filter((child) => {
+          return child.$options.name == 'ou-choice-field';
+        });
+
+        choiceFields.forEach((child) => {
           if (child.value === this.value) {
             child.checkRadio();
+          } else {
+            child.unCheckRadio();
           }
         });
       }

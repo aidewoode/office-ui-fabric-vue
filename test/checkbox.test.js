@@ -42,7 +42,7 @@ describe('Checkbox', () => {
     expect(inputEvent).toBeCalledWith(false);
   });
 
-  test('should can set check status by value', () => {
+  test('should can set checked status by value', () => {
     wrapper.setProps({ value: true });
     expect(wrapper.find('label').classes()).toContain('is-checked');
 

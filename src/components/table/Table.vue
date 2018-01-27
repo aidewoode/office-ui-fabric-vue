@@ -19,6 +19,8 @@
   import type from '../../mixins/props/type';
 
   export default {
+    name: 'ou-table',
+
     mixins: [type('fixed')],
 
     props: {

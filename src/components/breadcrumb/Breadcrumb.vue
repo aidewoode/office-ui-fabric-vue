@@ -14,6 +14,8 @@
 </template>
 <script>
   export default {
+    name: 'ou-breadcrumb',
+
     mounted() {
       new this.$fabric.Breadcrumb(this.$refs.breadcrumb);
     }

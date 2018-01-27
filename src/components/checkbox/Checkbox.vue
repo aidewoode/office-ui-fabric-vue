@@ -16,6 +16,8 @@
   import disabled from '../../mixins/props/disabled';
 
   export default {
+    name: 'ou-checkbox',
+
     mixins: [disabled],
 
     props: {

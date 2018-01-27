@@ -3,6 +3,8 @@
 </template>
 <script>
   export default {
+    name: 'ou-pivot-item',
+
     props: {
       label: {
         type: String,

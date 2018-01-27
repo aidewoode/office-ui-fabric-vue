@@ -6,6 +6,7 @@
 </template>
 <script>
   export default {
+    name: 'ou-org-chart-group',
     props: {
       title: String
     }

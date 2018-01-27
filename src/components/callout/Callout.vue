@@ -28,6 +28,8 @@
   import type from '../../mixins/props/type';
 
   export default {
+    name: 'ou-callout',
+
     mixins: [type('actionText', 'OOBE', 'peek')],
 
     props: {

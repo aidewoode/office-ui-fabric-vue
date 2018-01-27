@@ -24,6 +24,8 @@
   import disabled from '../../mixins/props/disabled';
 
   export default {
+    name: 'ou-text-field',
+
     mixins: [type('multiline', 'underlined'), disabled],
 
     props: {

@@ -15,6 +15,8 @@
   import icon from '../../mixins/props/icon';
 
   export default {
+    name: 'ou-message-bar',
+
     mixins: [
       type('success', 'error', 'blocked', 'warning', 'severeWarning'),
       icon

@@ -18,6 +18,8 @@
 </template>
 <script>
   export default {
+    name: 'ou-message-banner',
+
     props: {
       content: String
     },

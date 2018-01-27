@@ -52,6 +52,8 @@
 </template>
 <script>
   export default {
+    name: 'ou-date-picker',
+
     props: {
       value: String,
       label: String,

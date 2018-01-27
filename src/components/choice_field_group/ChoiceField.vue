@@ -18,6 +18,8 @@
   import disabled from '../../mixins/props/disabled';
 
   export default {
+    name: 'ou-choice-field',
+
     mixins: [disabled],
 
     props: {
@@ -33,7 +35,13 @@
 
       checkRadio() {
         if (!this.disabled) {
-          this.$refs.radioLabel.setAttribute('aria-checked', true);
+          this.$refs.radioLabel.classList.add('is-checked');
+        }
+      },
+
+      unCheckRadio() {
+        if (!this.disabled) {
+          this.$refs.radioLabel.classList.remove('is-checked');
         }
       }
     }

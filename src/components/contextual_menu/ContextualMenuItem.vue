@@ -18,6 +18,8 @@
   import disabled from '../../mixins/props/disabled';
 
   export default {
+    name: 'ou-contextual-menu-item',
+
     mixins: [type('divider', 'header', 'hasMenu'), disabled],
 
     data() {

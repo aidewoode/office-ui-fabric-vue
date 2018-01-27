@@ -5,6 +5,8 @@
 </template>
 <script>
   export default {
+    name: 'ou-link',
+
     props: {
       href: String,
       title: String,

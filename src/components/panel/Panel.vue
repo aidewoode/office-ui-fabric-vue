@@ -15,6 +15,8 @@
   import size from '../../mixins/props/size';
 
   export default {
+    name: 'ou-panel',
+
     mixins: [size('md', 'lg', 'xl', 'xxl')],
 
     props: {

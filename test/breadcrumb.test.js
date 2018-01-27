@@ -7,7 +7,7 @@ import BreadcrumbItem from '../src/components/breadcrumb/BreadcrumbItem.vue';
 describe('Breadcrumb', () => {
   let wrapper = mount(Breadcrumb, {
     slots: {
-      default: [BreadcrumbItem]
+      default: [BreadcrumbItem, BreadcrumbItem]
     },
 
     mocks: {
@@ -17,6 +17,8 @@ describe('Breadcrumb', () => {
 
   test('should render correct', () => {
     expect(wrapper.contains('.ms-Breadcrumb')).toBeTruthy();
-    expect(wrapper.contains('.ms-Breadcrumb-listItem')).toBeTruthy();
+
+    // the BreadcrumbItem component contains the element which class is ms-Breadcrumb-listItem.
+    expect(wrapper.findAll('.ms-Breadcrumb-listItem').length).toBe(2);
   });
 });
