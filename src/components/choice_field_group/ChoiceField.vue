@@ -22,25 +22,29 @@
 
     mixins: [disabled],
 
+    inject: ['eventHub'],
+
     props: {
       value: [String, Number]
+    },
+
+    created() {
+      this.eventHub.$on('setChoiceField', this.setChoiceField);
     },
 
     methods: {
       updateParentValue() {
         if (!this.disabled) {
-          this.$parent.updateValue(this.value);
+          this.eventHub.$emit('updateValue', this.value);
         }
       },
 
-      checkRadio() {
-        if (!this.disabled) {
+      setChoiceField(value) {
+        if (this.disabled) { return; }
+
+        if (this.value == value) {
           this.$refs.radioLabel.classList.add('is-checked');
-        }
-      },
-
-      unCheckRadio() {
-        if (!this.disabled) {
+        } else {
           this.$refs.radioLabel.classList.remove('is-checked');
         }
       }

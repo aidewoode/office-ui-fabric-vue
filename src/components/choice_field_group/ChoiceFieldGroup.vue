@@ -9,8 +9,12 @@
   </div>
 </template>
 <script>
+  import eventHub from '../../mixins/eventHub';
+
   export default {
     name: 'ou-choice-field-group',
+
+    mixins: [eventHub],
 
     props: {
       value: [String, Number]
@@ -20,6 +24,10 @@
       value() {
         this.setChoiceFields();
       }
+    },
+
+    created() {
+      this.eventHub.$on('updateValue', this.updateValue);
     },
 
     mounted() {
@@ -33,17 +41,7 @@
       },
 
       setChoiceFields() {
-        const choiceFields = this.$children.filter((child) => {
-          return child.$options.name == 'ou-choice-field';
-        });
-
-        choiceFields.forEach((child) => {
-          if (child.value === this.value) {
-            child.checkRadio();
-          } else {
-            child.unCheckRadio();
-          }
-        });
+        this.eventHub.$emit('setChoiceField', this.value);
       }
     }
   };
