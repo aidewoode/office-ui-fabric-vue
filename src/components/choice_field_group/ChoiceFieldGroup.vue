@@ -30,6 +30,10 @@
       this.eventHub.$on('updateValue', this.updateValue);
     },
 
+    beforeDestroy() {
+      this.eventHub.$off('updateValue', this.updateValue);
+    },
+
     mounted() {
       if (typeof this.value != 'undefined') { this.setChoiceFields(); }
       new this.$fabric.ChoiceFieldGroup(this.$refs.choiceFieldGroup);

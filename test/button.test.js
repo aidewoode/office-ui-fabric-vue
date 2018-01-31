@@ -40,20 +40,20 @@ describe('Button', () => {
     expect(clickEvent).toBeCalled();
   });
 
-  test('should add icon only for hero button', () => {
+  test('should can add icon only for hero button', () => {
     const otherTypes = ['primary', 'compound', 'small'];
     wrapper.setProps({ icon: 'Add' });
 
     otherTypes.forEach((type) => {
       wrapper.setProps({ type });
-      expect(wrapper.contains('.ms-Button-icon')).toBeFalsy();
+      expect(wrapper.contains('.ms-Icon')).toBeFalsy();
     });
 
     wrapper.setProps({ type: 'hero'});
-    expect(wrapper.contains('.ms-Button-icon')).toBeTruthy();
+    expect(wrapper.contains('.ms-Icon')).toBeTruthy();
   })
 
-  test('should add description only for compound button', () => {
+  test('should can add description only for compound button', () => {
     const otherTypes = ['primary', 'hero', 'small'];
     wrapper.setProps({ description: 'test' });
 

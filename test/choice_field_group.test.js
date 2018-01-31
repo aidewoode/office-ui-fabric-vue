@@ -13,7 +13,11 @@ describe('ChoiceFieldGroup', () => {
 
     wrapper = mount(ChoiceFieldGroup, {
       slots: {
-        default: ['<choice-field value=0 />','<choice-field value=1 />'],
+        default: [
+          '<choice-field value=0 />',
+          '<choice-field value=1 />',
+          '<choice-field value=2 disabled />',
+        ],
         title: 'title'
       },
 
@@ -32,7 +36,7 @@ describe('ChoiceFieldGroup', () => {
   test('should render correct', () => {
     expect(wrapper.contains('.ms-ChoiceFieldGroup')).toBeTruthy();
     expect(wrapper.find('.ms-ChoiceFieldGroup-title').text()).toBe('title');
-    expect(wrapper.findAll('.ms-RadioButton').length).toBe(2);
+    expect(wrapper.findAll('.ms-RadioButton').length).toBe(3);
   });
 
   test('should render a value when selected', () => {
@@ -54,5 +58,13 @@ describe('ChoiceFieldGroup', () => {
     wrapper.setProps({ value: '0' });
     expect(wrapper.findAll('.ms-RadioButton label').at(0).classes()).toContain('is-checked');
     expect(wrapper.findAll('.ms-RadioButton label').at(1).classes()).not.toContain('is-checked');
+  });
+
+  test('should can set choice_field to be disabled', () => {
+    const inputEvent = jest.fn();
+    wrapper.vm.$on('input', inputEvent);
+
+    wrapper.findAll('.ms-RadioButton label').at(2).trigger('click')
+    expect(inputEvent).not.toBeCalled();
   });
 });

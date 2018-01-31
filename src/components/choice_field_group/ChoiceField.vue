@@ -32,6 +32,10 @@
       this.eventHub.$on('setChoiceField', this.setChoiceField);
     },
 
+    beforeDestroy() {
+      this.eventHub.$off('setChoiceField', this.setChoiceField);
+    },
+
     methods: {
       updateParentValue() {
         if (!this.disabled) {
