@@ -22,6 +22,8 @@
 
     mixins: [type('divider', 'header', 'hasMenu'), disabled],
 
+    inject: ['eventHub'],
+
     data() {
       return {
         selected: false
@@ -56,17 +58,29 @@
       }
     },
 
+    created() {
+      this.eventHub.$on('setSelected', this.setSelected);
+    },
+
+    beforeDestroy() {
+      this.eventHub.$off('setSelected', this.setSelected);
+    },
+
     methods: {
       clickEvent() {
-        if (this.$parent.type == 'multiselect' && this.value) {
-          this.$parent.updateValue(this.value);
-        } else {
+        if (this.value) {
+          this.eventHub.$emit('updateValue', this.value);
+        } else if (!this.type && !this.disabled) {
           this.$emit('click');
         }
       },
 
-      setSelected() {
-        this.selected = true;
+      setSelected(values) {
+        if (values.includes(this.value)) {
+          this.selected = true;
+        } else {
+          this.selected = false;
+        }
       }
     }
   };

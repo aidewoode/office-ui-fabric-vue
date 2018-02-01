@@ -15,14 +15,20 @@
 </style>
 <script>
   import type from '../../mixins/props/type';
+  import eventHub from '../../mixins/eventHub';
 
   export default {
     name: 'ou-contextual-menu',
 
-    mixins: [type('multiselect')],
+    mixins: [type('multiselect'), eventHub],
 
     props: {
-      value: Array
+      value: {
+        type: Array,
+        default() {
+          return [];
+        }
+      }
     },
 
     computed: {
@@ -39,6 +45,10 @@
       }
     },
 
+    created() {
+      this.eventHub.$on('updateValue', this.updateValue);
+    },
+
     mounted() {
       this.setChildrenValue();
 
@@ -48,18 +58,20 @@
       );
     },
 
+    beforeDestroy() {
+      this.eventHub.$off('updateValue', this.updateValue);
+    },
+
     methods: {
       setChildrenValue() {
-        if (this.type == 'multiselect' && this.value) {
-          this.$children.forEach((child) => {
-            if (this.value.includes(child.value)) {
-              child.setSelected();
-            }
-          });
+        if (this.type == 'multiselect') {
+          this.eventHub.$emit('setSelected', this.value);
         }
       },
 
       updateValue(value) {
+        if (this.type != 'multiselect') { return; }
+
         let newValue;
 
         if (this.value.includes(value)) {

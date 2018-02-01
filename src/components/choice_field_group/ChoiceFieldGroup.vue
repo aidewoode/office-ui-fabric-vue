@@ -35,7 +35,7 @@
     },
 
     mounted() {
-      if (typeof this.value != 'undefined') { this.setChoiceFields(); }
+      this.setChoiceFields();
       new this.$fabric.ChoiceFieldGroup(this.$refs.choiceFieldGroup);
     },
 
@@ -45,7 +45,9 @@
       },
 
       setChoiceFields() {
-        this.eventHub.$emit('setChoiceField', this.value);
+        if (typeof this.value != 'undefined') {
+          this.eventHub.$emit('setChoiceField', this.value);
+        }
       }
     }
   };

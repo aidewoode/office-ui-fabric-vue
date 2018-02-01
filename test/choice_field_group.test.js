@@ -5,6 +5,12 @@ import ChoiceFieldGroup from '../src/components/choice_field_group/ChoiceFieldGr
 import ChoiceField from '../src/components/choice_field_group/ChoiceField.vue';
 
 describe('ChoiceFieldGroup', () => {
+  const defaultSlot = [
+    '<choice-field value=0 />',
+    '<choice-field value=1 />',
+    '<choice-field value=2 disabled />',
+  ]
+
   let wrapper;
 
   beforeEach(() => {
@@ -13,11 +19,7 @@ describe('ChoiceFieldGroup', () => {
 
     wrapper = mount(ChoiceFieldGroup, {
       slots: {
-        default: [
-          '<choice-field value=0 />',
-          '<choice-field value=1 />',
-          '<choice-field value=2 disabled />',
-        ],
+        default: defaultSlot,
         title: 'title'
       },
 
@@ -36,7 +38,7 @@ describe('ChoiceFieldGroup', () => {
   test('should render correct', () => {
     expect(wrapper.contains('.ms-ChoiceFieldGroup')).toBeTruthy();
     expect(wrapper.find('.ms-ChoiceFieldGroup-title').text()).toBe('title');
-    expect(wrapper.findAll('.ms-RadioButton').length).toBe(3);
+    expect(wrapper.findAll('.ms-RadioButton').length).toBe(defaultSlot.length);
   });
 
   test('should render a value when selected', () => {

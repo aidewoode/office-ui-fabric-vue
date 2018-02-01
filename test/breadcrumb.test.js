@@ -5,9 +5,11 @@ import Breadcrumb from '../src/components/breadcrumb/Breadcrumb.vue';
 import BreadcrumbItem from '../src/components/breadcrumb/BreadcrumbItem.vue';
 
 describe('Breadcrumb', () => {
-  let wrapper = mount(Breadcrumb, {
+  const defaultSlot = [BreadcrumbItem, BreadcrumbItem];
+
+  const wrapper = mount(Breadcrumb, {
     slots: {
-      default: [BreadcrumbItem, BreadcrumbItem]
+      default: defaultSlot
     },
 
     mocks: {
@@ -15,10 +17,12 @@ describe('Breadcrumb', () => {
     }
   });
 
+  afterEach(() => {
+    wrapper.destroy();
+  });
+
   test('should render correct', () => {
     expect(wrapper.contains('.ms-Breadcrumb')).toBeTruthy();
-
-    // the BreadcrumbItem component contains the element which class is ms-Breadcrumb-listItem.
-    expect(wrapper.findAll('.ms-Breadcrumb-listItem').length).toBe(2);
+    expect(wrapper.findAll('.ms-Breadcrumb-listItem').length).toBe(defaultSlot.length);
   });
 });
