@@ -22,6 +22,7 @@
         date: '',
         defaultCode,
         datePickerProps: [
+          { name: 'v-model', type: 'String', required: 'false', description: 'bind date value to the date picker' },
           { name: 'label', type: 'String', required: 'false', description: 'the label for the DatePicker' },
           { name: 'placeholder', type: 'String', required: 'false', description: 'the placeholder for the DatePicker' },
           { name: 'format', type: 'String', required: 'false', acceptedValue: "the 'yyyy' is year, the 'mm' is month, the 'dd' is day", defaultValue: 'yyyy-mm-dd', description: 'the format for the value of DatePicker' }

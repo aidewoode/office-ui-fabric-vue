@@ -14,11 +14,15 @@ module.exports = function(env) {
     'index.docs.css': './docs/index.css'
   }
 
-  const entry = (env == 'development') ? docsEntry : Object.assign(distEntry, docsEntry);
+  let entry = env.development ? docsEntry : Object.assign(distEntry, docsEntry);
+
+  if (env.lib) {
+    entry = { 'office-ui-fabric.js': './src/lib.js' }
+  }
 
   let uglifyPlugin = []
 
-  if (env == 'production') {
+  if (env.production) {
     uglifyPlugin.push(new webpack.optimize.UglifyJsPlugin());
   }
 
@@ -26,7 +30,7 @@ module.exports = function(env) {
     context: __dirname,
     entry: entry,
     output: {
-      path: __dirname + '/dist',
+      path: env.lib? __dirname + '/lib' : __dirname + '/dist',
       filename: '[name]',
       publicPath: 'http://localhost:8080/dist',
       library: 'OfficeUIFabricVue',
@@ -46,12 +50,17 @@ module.exports = function(env) {
           test: /\.js$/,
           exclude: [
             path.resolve(__dirname, 'node_modules'),
-            path.resolve(__dirname, 'lib'),
+            path.resolve(__dirname, 'lib')
           ],
           use: [
             'babel-loader',
             'eslint-loader'
           ]
+        },
+        {
+          test: /\.js$/,
+          include: path.resolve(__dirname, 'node_modules/office-ui-fabric-js/dist'),
+          use: ['script-loader']
         },
         {
           test: /\.css$/,
@@ -85,7 +94,7 @@ module.exports = function(env) {
       //  define the vue enviroment.
       new webpack.DefinePlugin({
         'process.env': {
-          NODE_ENV: JSON.stringify(env)
+          NODE_ENV: JSON.stringify(env.production ? 'production' : 'development')
         }
       })
     ]
