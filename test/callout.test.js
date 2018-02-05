@@ -8,6 +8,11 @@ describe('Callout', () => {
 
   beforeEach(() => {
     wrapper = mount(Callout, {
+      propsData: {
+        title: 'title',
+        content: 'content'
+      },
+
       slots: {
         default: "<button id='trigger-button'></button>"
       },
@@ -23,8 +28,6 @@ describe('Callout', () => {
   });
 
   test('should render correct', () => {
-    wrapper.setProps({ title: 'title', content: 'content' });
-
     expect(wrapper.contains('.ms-Callout')).toBeTruthy();
     expect(wrapper.contains('#trigger-button')).toBeTruthy();
 
