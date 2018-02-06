@@ -9,7 +9,7 @@ describe('ChoiceFieldGroup', () => {
     '<choice-field value=0 />',
     '<choice-field value=1 />',
     '<choice-field value=2 disabled />',
-  ]
+  ];
 
   let wrapper;
 
@@ -41,7 +41,7 @@ describe('ChoiceFieldGroup', () => {
     expect(wrapper.findAll('.ms-RadioButton').length).toBe(defaultSlot.length);
   });
 
-  test('should render a value when selected', () => {
+  test('should return a value when selected', () => {
     const inputEvent = jest.fn();
     wrapper.vm.$on('input', inputEvent);
 

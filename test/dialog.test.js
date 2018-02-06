@@ -46,13 +46,23 @@ describe('Dialog', () => {
     expect(wrapper.find('.ms-Dialog').classes()).not.toContain('is-open');
   });
 
-  test('should return false when manually close the dialog', () => {
+  test('should return false when click overlay to close the dialog', () => {
     const inputEvent = jest.fn();
 
     wrapper.vm.$on('input', inputEvent);
-    wrapper.setProps({ value: true, type: 'close' });
-    wrapper.find('.ms-Dialog-buttonClose').trigger('click');
+    wrapper.setProps({ value: true });
+    wrapper.vm.$el.parentElement.querySelector('.ms-Overlay').click();
 
     expect(inputEvent).toBeCalledWith(false);
+  });
+
+  test('should can not click overlay to close the dialog when is blocking dialog', () => {
+    wrapper.setProps({ type: 'blocking' });
+    wrapper.setProps({ value: true });
+
+    expect(wrapper.find('.ms-Dialog').classes()).toContain('is-open');
+
+    wrapper.vm.$el.parentElement.querySelector('.ms-Overlay').click();
+    expect(wrapper.find('.ms-Dialog').classes()).toContain('is-open');
   });
 });

@@ -49,7 +49,7 @@ describe('ContextualMenu', () => {
     expect(wrapper.find('.ms-ContextualMenu').classes()).not.toContain('is-hidden');
   });
 
-  test('should render a value only for multiselect contextual menu when selected', () => {
+  test('should return a value only for multiselect contextual menu when selected', () => {
     const inputEvent = jest.fn();
     const localVue = createLocalVue();
 

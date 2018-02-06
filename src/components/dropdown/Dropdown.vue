@@ -9,11 +9,12 @@
 </template>
 <script>
   import disabled from '../../mixins/props/disabled';
+  import eventHub from '../../mixins/eventHub';
 
   export default {
     name: 'ou-dropdown',
 
-    mixins: [disabled],
+    mixins: [disabled, eventHub],
 
     props: {
       label: String,
@@ -27,15 +28,23 @@
 
     watch: {
       value() {
-        this.setSelectItem();
+        this.setSelectedItem();
       }
+    },
+
+    created() {
+      this.eventHub.$on('setSelectedStatus', this.setSelectedStatus);
+    },
+
+    beforeDestroy() {
+      this.eventHub.$off('setSelectedStatus', this.setSelectedStatus);
     },
 
     mounted() {
       new this.$fabric.Dropdown(this.$refs.dropdown);
 
       this.setDropdownTitle(this.placeholder);
-      this.setSelectItem();
+      this.setSelectedItem();
     },
 
     methods: {
@@ -47,24 +56,22 @@
       // selected dropdown item, So write some hack code to set dropdown item selected.
       // Maybe next version of office ui js will fix this problem, So this code sould be
       // rewrite.
-      setSelectItem() {
-        this.$children.forEach((child) => {
-          if (child.value === this.value) {
-            const childText = child.$slots.default[0].text;
+      setSelectedItem() {
+        this.eventHub.$emit('setSelectedItem', this.value);
+      },
 
-            this.$refs.dropdown.querySelectorAll('.ms-Dropdown-item').forEach((item) => {
-              if (item.textContent == childText) {
-                item.classList.add('is-selected');
-                this.setDropdownTitle(childText);
-              }
-            });
+      setSelectedStatus(content) {
+        this.$refs.dropdown.querySelectorAll('.ms-Dropdown-item').forEach((item) => {
+          if (item.textContent == content) {
+            item.classList.add('is-selected');
+            this.setDropdownTitle(content);
           }
         });
       },
 
       getCurrentSelected() {
-        const selectedIndex = this.$refs.dropdownSelect.selectedIndex;
-        this.$emit('input', this.$children[selectedIndex].value);
+        const dropdownSelect = this.$refs.dropdownSelect;
+        this.$emit('input', dropdownSelect.options[dropdownSelect.selectedIndex].value);
       }
     }
   };

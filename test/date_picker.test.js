@@ -27,6 +27,16 @@ describe('DatePicker', () => {
     expect(wrapper.find('.ms-Label').text()).toBe('label');
   });
 
+  test('should return date when select a date', () => {
+    const inputEvent = jest.fn();
+
+    wrapper.vm.$on('input', inputEvent);
+    wrapper.setProps({ value: '2018-01-01'});
+    wrapper.vm.$el.querySelector('.ms-DatePicker-table tbody tr:first-child td:last-child div').click();
+
+    expect(inputEvent).toBeCalledWith('2018-01-06');
+  });
+
   test('should can set date by value', () => {
     wrapper.setProps({ value: '2018-01-01'});
     expect(wrapper.find('.ms-TextField-field').element.value).toBe('1 January, 2018');
