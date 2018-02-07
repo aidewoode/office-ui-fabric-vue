@@ -3,13 +3,13 @@
     <div slot='Overview' v-html='overviewContent'></div>
     <div slot='Variants'>
       <docs-code-block title='Default MessageBanner' :code='defaultCode'>
-        <ou-message-banner content='You have reached your total storage on OneDrive. Please upgrade your storage plan if you need more storage.'>
+        <ou-message-banner>
+          You have reached your total storage on OneDrive. Please upgrade your storage plan if you need more storage.
           <ou-button type='primary' slot='actions'>Get More Storage</ou-button>
         </ou-message-banner>
       </docs-code-block>
     </div>
     <div slot='Implementation'>
-      <docs-table type='props' :data='messageBannerProps' name='MessageBanner' />
       <docs-table type='slots' :data='messageBannerSlots' name='MessageBanner' />
     </div>
   </docs-content>
@@ -23,9 +23,6 @@
       return {
         overviewContent,
         defaultCode,
-        messageBannerProps: [
-          { name: 'content', type: 'String', required: 'false', description: 'the content of the message banner' }
-        ],
         messageBannerSlots: [
           { name: 'actions', description: 'the content for the area of actions' }
         ]

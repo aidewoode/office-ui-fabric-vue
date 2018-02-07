@@ -2,7 +2,7 @@
   <div class='ms-MessageBanner' ref='messageBanner'>
     <div class='ms-MessageBanner-content'>
       <div class='ms-MessageBanner-text'>
-        <div class='ms-MessageBanner-clipper'>{{ content }}</div>
+        <div class='ms-MessageBanner-clipper'><slot /></div>
       </div>
       <button class='ms-MessageBanner-expand'>
         <i class='ms-Icon ms-Icon--ChevronDown'></i>
@@ -19,10 +19,6 @@
 <script>
   export default {
     name: 'ou-message-banner',
-
-    props: {
-      content: String
-    },
 
     mounted() {
       new this.$fabric.MessageBanner(this.$refs.messageBanner);
