@@ -33,6 +33,7 @@ describe('Checkbox', () => {
 
   test('should return a value when toggled', () => {
     const inputEvent = jest.fn();
+
     wrapper.vm.$on('input', inputEvent);
 
     wrapper.find('label').trigger('click');
@@ -52,6 +53,7 @@ describe('Checkbox', () => {
 
   test('should can be disabled', () => {
     const inputEvent = jest.fn();
+
     wrapper.vm.$on('input', inputEvent);
     wrapper.setProps({ disabled: true });
 

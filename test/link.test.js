@@ -34,6 +34,7 @@ describe('Link', () => {
 
     wrapper.vm.$on('click', clickEvent);
     wrapper.trigger('click');
+
     expect(clickEvent).toBeCalled();
   });
 });

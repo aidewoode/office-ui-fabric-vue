@@ -38,7 +38,7 @@ describe('Dialog', () => {
     expect(wrapper.find('.ms-Dialog-actions').text()).toBe('actions');
   });
 
-  test('should control the visibility of dialog using value', () => {
+  test('should can control the visibility of dialog by value', () => {
     wrapper.setProps({ value: true });
     expect(wrapper.find('.ms-Dialog').classes()).toContain('is-open');
 

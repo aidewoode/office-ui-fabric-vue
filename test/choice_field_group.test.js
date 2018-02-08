@@ -8,13 +8,14 @@ describe('ChoiceFieldGroup', () => {
   const defaultSlot = [
     '<choice-field value=0 />',
     '<choice-field value=1 />',
-    '<choice-field value=2 disabled />',
+    '<choice-field value=2 disabled />'
   ];
 
   let wrapper;
 
   beforeEach(() => {
     const localVue = createLocalVue();
+
     localVue.component('choice-field', ChoiceField);
 
     wrapper = mount(ChoiceFieldGroup, {
