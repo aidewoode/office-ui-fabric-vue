@@ -41,6 +41,7 @@
         };
       }
     },
+
     created() {
       this.eventHub.$on('addPivotItem', this.addPivotItem);
     },

@@ -32,7 +32,7 @@ describe('DatePicker', () => {
 
     wrapper.vm.$on('input', inputEvent);
     wrapper.setProps({ value: '2018-01-01'});
-    wrapper.vm.$el.querySelector('.ms-DatePicker-table tbody tr:first-child td:last-child div').click();
+    wrapper.element.querySelector('.ms-DatePicker-table tbody tr:first-child td:last-child div').click();
 
     expect(inputEvent).toBeCalledWith('2018-01-06');
   });

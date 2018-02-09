@@ -7,6 +7,8 @@
   export default {
     name: 'ou-table-column',
 
+    inject: ['eventHub'],
+
     props: {
       prop: {
         type: String,
@@ -15,7 +17,7 @@
     },
 
     beforeMount() {
-      this.$parent.tableColumnItems.push(this.prop);
+      this.eventHub.$emit('addTableColumnItems', this.prop);
     }
   };
 </script>

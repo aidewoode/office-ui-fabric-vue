@@ -4,7 +4,7 @@
       {{ description }}
     </span>
     <input type='checkbox' class='ms-Toggle-input'/>
-    <span @click='toggle'>
+    <span class='ms-Toggle-trigger' @click='toggle'>
       <label
         class='ms-Toggle-field'
         tabindex='0'

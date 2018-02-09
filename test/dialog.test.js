@@ -51,7 +51,7 @@ describe('Dialog', () => {
 
     wrapper.vm.$on('input', inputEvent);
     wrapper.setProps({ value: true });
-    wrapper.vm.$el.parentElement.querySelector('.ms-Overlay').click();
+    wrapper.element.parentElement.querySelector('.ms-Overlay').click();
 
     expect(inputEvent).toBeCalledWith(false);
   });
@@ -62,7 +62,7 @@ describe('Dialog', () => {
 
     expect(wrapper.find('.ms-Dialog').classes()).toContain('is-open');
 
-    wrapper.vm.$el.parentElement.querySelector('.ms-Overlay').click();
+    wrapper.element.parentElement.querySelector('.ms-Overlay').click();
     expect(wrapper.find('.ms-Dialog').classes()).toContain('is-open');
   });
 });

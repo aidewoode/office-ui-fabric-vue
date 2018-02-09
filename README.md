@@ -4,6 +4,10 @@
 
 Office UI Fabric implementation for Vue.js, build with [office-ui-fabric-js](https://github.com/OfficeDev/office-ui-fabric-js)
 
+## Dependencies
+
+- vue.js 2.2.0+
+
 ## Installation
 
 ```
@@ -43,6 +47,10 @@ $ yarn run server
 // bundle the file
 
 $ yarn run bundle
+
+// runing the test
+
+$ yarn run test
 
 ```
 

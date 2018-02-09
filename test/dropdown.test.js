@@ -45,7 +45,7 @@ describe('Dropdown', () => {
   });
 
   test('should return a value when selected', () => {
-    const rootElement = wrapper.vm.$el;
+    const rootElement = wrapper.element;
     const inputEvent = jest.fn();
 
     wrapper.vm.$on('input', inputEvent);
@@ -57,9 +57,9 @@ describe('Dropdown', () => {
 
   test('should can set selected status by value', () => {
     wrapper.setProps({ value: '1' });
-    const dropdownItems = wrapper.vm.$el.querySelectorAll('.ms-Dropdown-item');
+    const dropdownItems = wrapper.element.querySelectorAll('.ms-Dropdown-item');
 
-    expect(wrapper.vm.$el.querySelector('.ms-Dropdown-title').textContent).toBe('1');
+    expect(wrapper.element.querySelector('.ms-Dropdown-title').textContent).toBe('1');
     expect(dropdownItems[1].classList.contains('is-selected')).toBeTruthy();
     expect(dropdownItems[0].classList.contains('is-selected')).toBeFalsy();
     expect(dropdownItems[2].classList.contains('is-selected')).toBeFalsy();

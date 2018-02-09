@@ -1,6 +1,6 @@
 {
   "name": "office-ui-fabric-vue",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Office UI Fabric implementation for Vue.js",
   "main": "dist/index.js",
   "author": "aidewoode <aidewoode@gmail.com>",
@@ -22,7 +22,8 @@
     "server": "./node_modules/.bin/webpack-dev-server --inline --hot --env.development",
     "bundle": "./node_modules/.bin/webpack --env.production",
     "bundleLib": "./node_modules/.bin/webpack --env.production --env.lib",
-    "test": "./node_modules/.bin/jest"
+    "test": "./node_modules/.bin/jest",
+    "lint": "./node_modules/.bin/eslint --ext .js,.vue src"
   },
   "devDependencies": {
     "babel-core": "^6.24.1",

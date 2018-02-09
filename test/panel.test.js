@@ -48,7 +48,7 @@ describe('Panel', () => {
 
     wrapper.vm.$on('input', inputEvent);
     wrapper.setProps({ value: true });
-    wrapper.vm.$el.parentElement.querySelector('.ms-Overlay').click();
+    wrapper.element.parentElement.querySelector('.ms-Overlay').click();
 
     expect(inputEvent).toBeCalledWith(false);
   });

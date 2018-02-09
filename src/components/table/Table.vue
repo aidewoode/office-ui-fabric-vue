@@ -17,11 +17,12 @@
 <script>
   // Note: The Selectable Table haven't create
   import type from '../../mixins/props/type';
+  import eventHub from '../../mixins/eventHub';
 
   export default {
     name: 'ou-table',
 
-    mixins: [type('fixed')],
+    mixins: [type('fixed'), eventHub],
 
     props: {
       data: {
@@ -46,6 +47,20 @@
         return {
           [`ms-Table--${this.type}`]: !!this.type
         };
+      }
+    },
+
+    created() {
+      this.eventHub.$on('addTableColumnItems', this.addTableColumnItems);
+    },
+
+    beforeDestroy() {
+      this.eventHub.$off('addTableColumnItems', this.tableColumnItems);
+    },
+
+    methods: {
+      addTableColumnItems(value) {
+        this.tableColumnItems.push(value);
       }
     }
   };

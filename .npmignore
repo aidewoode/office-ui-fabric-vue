@@ -1,9 +1,12 @@
 docs
 src
+lib
+test
 dist/index.docs.css
 dist/index.docs.js
 .babelrc
 .eslintrc.js
+.travis.yml
 webpack.config.js
 yarn.lock
 index.html
