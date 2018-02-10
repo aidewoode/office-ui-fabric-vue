@@ -1,4 +1,6 @@
 # Office UI Fabric Vue
+[![Build status](https://travis-ci.org/aidewoode/office-ui-fabric-vue.svg?branch=master)](https://travis-ci.org/aidewoode/office-ui-fabric-vue)
+[![NPM version](https://img.shields.io/npm/v/office-ui-fabric-vue.svg)](https://www.npmjs.com/package/office-ui-fabric-vue)
 
 ## Introduction
 
