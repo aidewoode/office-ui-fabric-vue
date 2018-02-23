@@ -4104,9 +4104,9 @@ office-ui-fabric-core@5.0.1:
   version "5.0.1"
   resolved "https://registry.yarnpkg.com/office-ui-fabric-core/-/office-ui-fabric-core-5.0.1.tgz#f6f27eb793ceca62366419877b73970de4841e52"
 
-office-ui-fabric-js@1.4.0:
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/office-ui-fabric-js/-/office-ui-fabric-js-1.4.0.tgz#6200299f7dd101742b0e84968534808afc0cef27"
+office-ui-fabric-js@1.5.0:
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/office-ui-fabric-js/-/office-ui-fabric-js-1.5.0.tgz#d77b778f79a6178f843dd757e4639ae05709d340"
   dependencies:
     office-ui-fabric-core "5.0.1"
 

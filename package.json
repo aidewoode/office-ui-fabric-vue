@@ -56,7 +56,7 @@
     "webpack-dev-server": "^2.4.5"
   },
   "dependencies": {
-    "office-ui-fabric-js": "1.4.0"
+    "office-ui-fabric-js": "1.5.0"
   },
   "jest": {
     "moduleFileExtensions": [

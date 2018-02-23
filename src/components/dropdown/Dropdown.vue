@@ -65,6 +65,8 @@
           if (item.textContent == content) {
             item.classList.add('is-selected');
             this.setDropdownTitle(content);
+          } else {
+            item.classList.remove('is-selected');
           }
         });
       },
