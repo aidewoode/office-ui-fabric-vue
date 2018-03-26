@@ -32,7 +32,7 @@ describe('SearchBox', () => {
     const inputEvent = jest.fn();
 
     wrapper.vm.$on('input', inputEvent);
-    wrapper.find('.ms-SearchBox-field').element.value = 'input';
+    wrapper.setProps({ value: 'input' });
     wrapper.find('.ms-SearchBox-field').trigger('input');
 
     expect(inputEvent).toBeCalledWith('input');
@@ -42,5 +42,25 @@ describe('SearchBox', () => {
     wrapper.setProps({ value: 'input' });
 
     expect(wrapper.find('.ms-SearchBox-field').element.value).toBe('input');
+  });
+
+  test('should clear value when click searchBox clear button', () => {
+    const inputEvent = jest.fn();
+
+    wrapper.vm.$on('input', inputEvent);
+    wrapper.setProps({ value: 'input' });
+    wrapper.find('.ms-SearchBox-clear').trigger('mousedown');
+
+    expect(inputEvent).toBeCalledWith('');
+  });
+
+  test('should clear value when blur input', () => {
+    const inputEvent = jest.fn();
+
+    wrapper.vm.$on('input', inputEvent);
+    wrapper.setProps({ value: 'input' });
+    wrapper.find('.ms-SearchBox-field').trigger('blur');
+
+    expect(inputEvent).toBeCalledWith('');
   });
 });
