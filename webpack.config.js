@@ -90,6 +90,7 @@ module.exports = function(env) {
     },
     plugins: [
       ...uglifyPlugin,
+      new webpack.optimize.ModuleConcatenationPlugin(),
       new ExtractTextPlugin('[name]'),
       //  define the vue enviroment.
       new webpack.DefinePlugin({
