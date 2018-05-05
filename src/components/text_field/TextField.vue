@@ -16,6 +16,7 @@
       :type='inputType'
       :value='value'
       @input='updateValue'
+      @change="handleChange"
       :disabled='disabled' />
   </div>
 </template>
@@ -57,6 +58,9 @@
     methods: {
       updateValue(event) {
         this.$emit('input', event.target.value);
+      },
+      handleChange(event) {
+        this.$emit('change', event.target.value);
       }
     }
   };

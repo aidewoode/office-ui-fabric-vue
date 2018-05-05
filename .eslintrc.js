@@ -13,7 +13,8 @@ module.exports = {
     "no-param-reassign": "off",
     "consistent-return": "off",
     "default-case": "off",
-    "no-unused-expressions": ["error", { "allowTernary": true }]
+    "no-unused-expressions": ["error", { "allowTernary": true }],
+    "linebreak-style": ["error", "windows"]
   },
   "plugins": [
     "import",
