@@ -11,6 +11,8 @@ import Dialog from './Dialog.vue';
 import Dropdown from './Dropdown.vue';
 import Label from './Label.vue';
 import Link from './Link.vue';
+import List from './List.vue';
+import ListItem from './ListItem.vue';
 import MessageBanner from './MessageBanner.vue';
 import MessageBar from './MessageBar.vue';
 import OrgChart from './OrgChart.vue';
@@ -39,6 +41,8 @@ export default {
   Dropdown,
   Label,
   Link,
+  List,
+  ListItem,
   MessageBanner,
   MessageBar,
   OrgChart,
