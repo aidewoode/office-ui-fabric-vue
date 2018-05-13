@@ -2,9 +2,8 @@
   <docs-content title='List'>
     <div slot='Overview' v-html='overviewContent'></div>
     <div slot='Variants'>
-      <docs-code-block title='Default List'>
+      <docs-code-block title='Default List' :code='defaultCode'>
         <ou-list>
-
           <ou-list-item 
             isSelectable 
             isUnread
@@ -66,36 +65,24 @@
               <ou-list-action-item><i class="ms-Icon ms-Icon--Pinned"></i></ou-list-action-item>
             </ou-list-actions>
           </ou-list-item>
-  
         </ou-list>
       </docs-code-block>
-    </div>
-    <div slot='Implementation'>
-      <docs-table type='props' :data='buttonProps' name='Button' />
-      <docs-table type='events' :data='buttonEvents' name='Button' />
     </div>
   </docs-content>
 </template>
 <script>
+  import defaultCode from '../markdown/list/defaultCode.md';
   import overviewContent from '../markdown/list/overview.md';
 
   export default {
     data() {
       return {
+        defaultCode,
         overviewContent,
         item1Checked: false,
         item2Checked: false,
         item3Checked: false,
         item4Checked: false,
-        buttonProps: [
-          { name: 'type', type: 'String', required: 'false', acceptedValue: 'primary, hero, compound, small', description: 'the type of the button' },
-          { name: 'disabled', type: 'Boolean', required: 'false', defaultValue: 'false', description: 'if the button is disabled' },
-          { name: 'icon', type: 'String', required: 'false', description: 'the icon for the hero button' },
-          { name: 'description', type: 'String', required: 'false', description: 'the description for the compound button' }
-        ],
-        buttonEvents: [
-          { name: 'click', description: 'the callback function when clicked' }
-        ]
       };
     }
   };
