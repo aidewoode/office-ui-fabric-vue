@@ -1,5 +1,5 @@
 <template>
-  <ul class='ms-List' :class='labelClass'><slot /></ul>
+  <ul class='ms-List' ref='list' :class='labelClass'><slot /></ul>
 </template>
 <script>
   import disabled from '../../mixins/props/disabled';
@@ -23,6 +23,10 @@
           'is-required': this.required
         };
       }
+    },
+
+    mounted() {
+      new this.$fabric.List(this.$refs.list);
     }
   };
 </script>

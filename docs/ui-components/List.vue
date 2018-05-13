@@ -2,8 +2,51 @@
   <docs-content title='List'>
     <div slot='Overview' v-html='overviewContent'></div>
     <div slot='Variants'>
-      <docs-code-block title='Normal Button' :code='normalCode'>
-        <ou-button>Create Account</ou-button>
+      <docs-code-block title='Default List'>
+        <ou-list>
+          <ou-listitem class="is-unread is-selectable" tabindex="0">
+            <span class="ms-ListItem-primaryText">Alton Lafferty</span> 
+            <span class="ms-ListItem-secondaryText">Meeting notes</span> 
+            <span class="ms-ListItem-tertiaryText">Today we discussed the importance of a, b, and c in regards to d.</span> 
+            <span class="ms-ListItem-metaText">2:42p</span> 
+            <div class="ms-ListItem-selectionTarget"></div>
+            <div class="ms-ListItem-actions">
+              <div class="ms-ListItem-action">
+                <i class="ms-Icon ms-Icon--Mail"></i>
+              </div>
+              <div class="ms-ListItem-action">
+                <i class="ms-Icon ms-Icon--Delete"></i>
+              </div>
+              <div class="ms-ListItem-action">
+                <i class="ms-Icon ms-Icon--Flag"></i>
+              </div>
+              <div class="ms-ListItem-action">
+                <i class="ms-Icon ms-Icon--Pinned"></i>
+              </div>
+            </div>
+          </ou-listitem>
+          <ou-listitem class="is-unread is-selectable" tabindex="0">
+            <span class="ms-ListItem-primaryText">Alton Lafferty</span> 
+            <span class="ms-ListItem-secondaryText">Meeting notes</span> 
+            <span class="ms-ListItem-tertiaryText">Today we discussed the importance of a, b, and c in regards to d.</span> 
+            <span class="ms-ListItem-metaText">2:42p</span> 
+            <div class="ms-ListItem-selectionTarget"></div>
+            <div class="ms-ListItem-actions">
+              <div class="ms-ListItem-action">
+                <i class="ms-Icon ms-Icon--Mail"></i>
+              </div>
+              <div class="ms-ListItem-action">
+                <i class="ms-Icon ms-Icon--Delete"></i>
+              </div>
+              <div class="ms-ListItem-action">
+                <i class="ms-Icon ms-Icon--Flag"></i>
+              </div>
+              <div class="ms-ListItem-action">
+                <i class="ms-Icon ms-Icon--Pinned"></i>
+              </div>
+            </div>
+          </ou-listitem>
+        </ou-list>
       </docs-code-block>
     </div>
     <div slot='Implementation'>
@@ -13,22 +56,12 @@
   </docs-content>
 </template>
 <script>
-  import overviewContent from '../markdown/button/overview.md';
-  import normalCode from '../markdown/button/normalCode.md';
-  import primaryCode from '../markdown/button/primaryCode.md';
-  import heroCode from '../markdown/button/heroCode.md';
-  import compoundCode from '../markdown/button/compoundCode.md';
-  import smallCode from '../markdown/button/smallCode.md';
+  import overviewContent from '../markdown/list/overview.md';
 
   export default {
     data() {
       return {
         overviewContent,
-        normalCode,
-        primaryCode,
-        heroCode,
-        compoundCode,
-        smallCode,
         buttonProps: [
           { name: 'type', type: 'String', required: 'false', acceptedValue: 'primary, hero, compound, small', description: 'the type of the button' },
           { name: 'disabled', type: 'Boolean', required: 'false', defaultValue: 'false', description: 'if the button is disabled' },
