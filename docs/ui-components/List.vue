@@ -4,12 +4,14 @@
     <div slot='Variants'>
       <docs-code-block title='Default List'>
         <ou-list>
-          <ou-listitem class="is-unread is-selectable" tabindex="0">
+          <ou-list-item 
+            class="is-unread" 
+            isSelectable 
+            v-model='item1'>
             <span class="ms-ListItem-primaryText">Alton Lafferty</span> 
             <span class="ms-ListItem-secondaryText">Meeting notes</span> 
             <span class="ms-ListItem-tertiaryText">Today we discussed the importance of a, b, and c in regards to d.</span> 
             <span class="ms-ListItem-metaText">2:42p</span> 
-            <div class="ms-ListItem-selectionTarget"></div>
             <div class="ms-ListItem-actions">
               <div class="ms-ListItem-action">
                 <i class="ms-Icon ms-Icon--Mail"></i>
@@ -24,13 +26,12 @@
                 <i class="ms-Icon ms-Icon--Pinned"></i>
               </div>
             </div>
-          </ou-listitem>
-          <ou-listitem class="is-unread is-selectable" tabindex="0">
+          </ou-list-item>
+          <ou-list-item class="is-unread" tabindex="0">
             <span class="ms-ListItem-primaryText">Alton Lafferty</span> 
             <span class="ms-ListItem-secondaryText">Meeting notes</span> 
             <span class="ms-ListItem-tertiaryText">Today we discussed the importance of a, b, and c in regards to d.</span> 
             <span class="ms-ListItem-metaText">2:42p</span> 
-            <div class="ms-ListItem-selectionTarget"></div>
             <div class="ms-ListItem-actions">
               <div class="ms-ListItem-action">
                 <i class="ms-Icon ms-Icon--Mail"></i>
@@ -45,7 +46,7 @@
                 <i class="ms-Icon ms-Icon--Pinned"></i>
               </div>
             </div>
-          </ou-listitem>
+          </ou-list-item>
         </ou-list>
       </docs-code-block>
     </div>
@@ -62,6 +63,7 @@
     data() {
       return {
         overviewContent,
+        item1: false,
         buttonProps: [
           { name: 'type', type: 'String', required: 'false', acceptedValue: 'primary, hero, compound, small', description: 'the type of the button' },
           { name: 'disabled', type: 'Boolean', required: 'false', defaultValue: 'false', description: 'if the button is disabled' },
