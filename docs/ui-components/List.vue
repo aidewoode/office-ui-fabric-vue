@@ -6,13 +6,13 @@
         <ou-list>
 
           <ou-list-item 
-            class="is-unread" 
             isSelectable 
-            v-model='item1Checked'
+            isUnread
             primaryText='Alton Lafferty'
             secondaryText='Meeting notes'
             tertiaryText='Today we discussed the importance of a, b, and c in regards to d.'
-            metaText='2:42p'>
+            metaText='2:42p'
+            v-model='item1Checked'>
             <ou-list-actions>
               <ou-list-action-item><i class="ms-Icon ms-Icon--Mail"></i></ou-list-action-item>
               <ou-list-action-item><i class="ms-Icon ms-Icon--Delete"></i></ou-list-action-item>
@@ -22,13 +22,13 @@
           </ou-list-item>
 
           <ou-list-item 
-            class="is-unread" 
-            isSelectable 
-            v-model='item2Checked'
+            isSelectable
+            isUnread 
             primaryText='Alton Lafferty'
             secondaryText='Meeting notes'
             tertiaryText='Today we discussed the importance of a, b, and c in regards to d.'
-            metaText='2:42p'>
+            metaText='2:42p'
+            v-model='item2Checked'>
             <ou-list-actions>
               <ou-list-action-item><i class="ms-Icon ms-Icon--Mail"></i></ou-list-action-item>
               <ou-list-action-item><i class="ms-Icon ms-Icon--Delete"></i></ou-list-action-item>
@@ -39,11 +39,11 @@
           
           <ou-list-item 
             isSelectable 
-            v-model='item3Checked'
             primaryText='Alton Lafferty'
             secondaryText='Meeting notes'
             tertiaryText='Today we discussed the importance of a, b, and c in regards to d.'
-            metaText='2:42p'>
+            metaText='2:42p'
+            v-model='item3Checked'>
             <ou-list-actions>
               <ou-list-action-item><i class="ms-Icon ms-Icon--Mail"></i></ou-list-action-item>
               <ou-list-action-item><i class="ms-Icon ms-Icon--Delete"></i></ou-list-action-item>
@@ -54,11 +54,11 @@
 
           <ou-list-item 
             isSelectable 
-            v-model='item4Checked'
             primaryText='Alton Lafferty'
             secondaryText='Meeting notes'
             tertiaryText='Today we discussed the importance of a, b, and c in regards to d.'
-            metaText='2:42p'>
+            metaText='2:42p'
+            v-model='item4Checked'>
             <ou-list-actions>
               <ou-list-action-item><i class="ms-Icon ms-Icon--Mail"></i></ou-list-action-item>
               <ou-list-action-item><i class="ms-Icon ms-Icon--Delete"></i></ou-list-action-item>

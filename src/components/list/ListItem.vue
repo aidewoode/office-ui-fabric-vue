@@ -16,7 +16,9 @@
     name: 'ou-list-item',
 
     props: {
+      isUnread: Boolean,
       isSelectable: Boolean,
+      isUnseen: Boolean,
       metaText: String,
       primaryText: String,
       secondaryText: String,
@@ -29,6 +31,8 @@
         return {
           'is-selectable': this.isSelectable,
           'is-selected': this.value,
+          'is-unread': this.isUnread,
+          'is-unseen': this.isUnseen,
         };
       }
     },
