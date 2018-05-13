@@ -4,49 +4,69 @@
     <div slot='Variants'>
       <docs-code-block title='Default List'>
         <ou-list>
+
           <ou-list-item 
             class="is-unread" 
             isSelectable 
-            v-model='item1'>
-            <span class="ms-ListItem-primaryText">Alton Lafferty</span> 
-            <span class="ms-ListItem-secondaryText">Meeting notes</span> 
-            <span class="ms-ListItem-tertiaryText">Today we discussed the importance of a, b, and c in regards to d.</span> 
-            <span class="ms-ListItem-metaText">2:42p</span> 
-            <div class="ms-ListItem-actions">
-              <div class="ms-ListItem-action">
-                <i class="ms-Icon ms-Icon--Mail"></i>
-              </div>
-              <div class="ms-ListItem-action">
-                <i class="ms-Icon ms-Icon--Delete"></i>
-              </div>
-              <div class="ms-ListItem-action">
-                <i class="ms-Icon ms-Icon--Flag"></i>
-              </div>
-              <div class="ms-ListItem-action">
-                <i class="ms-Icon ms-Icon--Pinned"></i>
-              </div>
-            </div>
+            v-model='item1Checked'
+            primaryText='Alton Lafferty'
+            secondaryText='Meeting notes'
+            tertiaryText='Today we discussed the importance of a, b, and c in regards to d.'
+            metaText='2:42p'>
+            <ou-list-actions>
+              <ou-list-action-item><i class="ms-Icon ms-Icon--Mail"></i></ou-list-action-item>
+              <ou-list-action-item><i class="ms-Icon ms-Icon--Delete"></i></ou-list-action-item>
+              <ou-list-action-item><i class="ms-Icon ms-Icon--Flag"></i></ou-list-action-item>
+              <ou-list-action-item><i class="ms-Icon ms-Icon--Pinned"></i></ou-list-action-item>
+            </ou-list-actions>
           </ou-list-item>
-          <ou-list-item class="is-unread" tabindex="0">
-            <span class="ms-ListItem-primaryText">Alton Lafferty</span> 
-            <span class="ms-ListItem-secondaryText">Meeting notes</span> 
-            <span class="ms-ListItem-tertiaryText">Today we discussed the importance of a, b, and c in regards to d.</span> 
-            <span class="ms-ListItem-metaText">2:42p</span> 
-            <div class="ms-ListItem-actions">
-              <div class="ms-ListItem-action">
-                <i class="ms-Icon ms-Icon--Mail"></i>
-              </div>
-              <div class="ms-ListItem-action">
-                <i class="ms-Icon ms-Icon--Delete"></i>
-              </div>
-              <div class="ms-ListItem-action">
-                <i class="ms-Icon ms-Icon--Flag"></i>
-              </div>
-              <div class="ms-ListItem-action">
-                <i class="ms-Icon ms-Icon--Pinned"></i>
-              </div>
-            </div>
+
+          <ou-list-item 
+            class="is-unread" 
+            isSelectable 
+            v-model='item2Checked'
+            primaryText='Alton Lafferty'
+            secondaryText='Meeting notes'
+            tertiaryText='Today we discussed the importance of a, b, and c in regards to d.'
+            metaText='2:42p'>
+            <ou-list-actions>
+              <ou-list-action-item><i class="ms-Icon ms-Icon--Mail"></i></ou-list-action-item>
+              <ou-list-action-item><i class="ms-Icon ms-Icon--Delete"></i></ou-list-action-item>
+              <ou-list-action-item><i class="ms-Icon ms-Icon--Flag"></i></ou-list-action-item>
+              <ou-list-action-item><i class="ms-Icon ms-Icon--Pinned"></i></ou-list-action-item>
+            </ou-list-actions>
           </ou-list-item>
+          
+          <ou-list-item 
+            isSelectable 
+            v-model='item3Checked'
+            primaryText='Alton Lafferty'
+            secondaryText='Meeting notes'
+            tertiaryText='Today we discussed the importance of a, b, and c in regards to d.'
+            metaText='2:42p'>
+            <ou-list-actions>
+              <ou-list-action-item><i class="ms-Icon ms-Icon--Mail"></i></ou-list-action-item>
+              <ou-list-action-item><i class="ms-Icon ms-Icon--Delete"></i></ou-list-action-item>
+              <ou-list-action-item><i class="ms-Icon ms-Icon--Flag"></i></ou-list-action-item>
+              <ou-list-action-item><i class="ms-Icon ms-Icon--Pinned"></i></ou-list-action-item>
+            </ou-list-actions>
+          </ou-list-item>
+
+          <ou-list-item 
+            isSelectable 
+            v-model='item4Checked'
+            primaryText='Alton Lafferty'
+            secondaryText='Meeting notes'
+            tertiaryText='Today we discussed the importance of a, b, and c in regards to d.'
+            metaText='2:42p'>
+            <ou-list-actions>
+              <ou-list-action-item><i class="ms-Icon ms-Icon--Mail"></i></ou-list-action-item>
+              <ou-list-action-item><i class="ms-Icon ms-Icon--Delete"></i></ou-list-action-item>
+              <ou-list-action-item><i class="ms-Icon ms-Icon--Flag"></i></ou-list-action-item>
+              <ou-list-action-item><i class="ms-Icon ms-Icon--Pinned"></i></ou-list-action-item>
+            </ou-list-actions>
+          </ou-list-item>
+  
         </ou-list>
       </docs-code-block>
     </div>
@@ -63,7 +83,10 @@
     data() {
       return {
         overviewContent,
-        item1: false,
+        item1Checked: false,
+        item2Checked: false,
+        item3Checked: false,
+        item4Checked: false,
         buttonProps: [
           { name: 'type', type: 'String', required: 'false', acceptedValue: 'primary, hero, compound, small', description: 'the type of the button' },
           { name: 'disabled', type: 'Boolean', required: 'false', defaultValue: 'false', description: 'if the button is disabled' },
