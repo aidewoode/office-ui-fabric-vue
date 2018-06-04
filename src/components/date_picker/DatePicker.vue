@@ -95,7 +95,11 @@
       },
 
       setPickerValue(value) {
-        this.datePickerInstance.set('select', value, { format: this.format });
+        if (value) {
+          this.datePickerInstance.set('select', value, { format: this.format });
+        } else {
+          this.datePickerInstance.set('clear');
+        }
       }
     }
   };

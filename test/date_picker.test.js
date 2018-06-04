@@ -40,6 +40,9 @@ describe('DatePicker', () => {
   test('should can set date by value', () => {
     wrapper.setProps({ value: '2018-01-01'});
     expect(wrapper.find('.ms-TextField-field').element.value).toBe('1 January, 2018');
+
+    wrapper.setProps({ value: ''});
+    expect(wrapper.find('.ms-TextField-field').element.value).toBe('');
   });
 
   test('should can change date format', () => {
