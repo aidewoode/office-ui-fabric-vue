@@ -1,8 +1,8 @@
 <template>
-  <div class="ms-ListItem-actions"><slot /></div>
+  <div class='ms-ListItem-actions'><slot /></div>
 </template>
 <script>
   export default {
-    name: 'ou-list-actions',
+    name: 'ou-list-actions'
   };
 </script>

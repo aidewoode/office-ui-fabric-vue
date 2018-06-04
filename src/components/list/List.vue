@@ -3,10 +3,6 @@
 </template>
 <script>
   export default {
-    name: 'ou-list',
-
-    mounted() {
-      new this.$fabric.List(this.$refs.list);
-    }
+    name: 'ou-list'
   };
 </script>
