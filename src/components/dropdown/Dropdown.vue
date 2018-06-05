@@ -62,7 +62,7 @@
 
       setSelectedStatus(content) {
         this.$refs.dropdown.querySelectorAll('.ms-Dropdown-item').forEach((item) => {
-          if (item.textContent == content) {
+          if (item.textContent.trim() == content.trim()) {
             item.classList.add('is-selected');
             this.setDropdownTitle(content);
           } else {

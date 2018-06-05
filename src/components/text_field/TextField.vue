@@ -8,6 +8,7 @@
       type='text'
       :value='value'
       @input='updateValue'
+      @change='changeEvent'
       :disabled='disabled'></textarea>
     <input
       v-else
@@ -16,6 +17,7 @@
       :type='inputType'
       :value='value'
       @input='updateValue'
+      @change='changeEvent'
       :disabled='disabled' />
   </div>
 </template>
@@ -57,6 +59,10 @@
     methods: {
       updateValue(event) {
         this.$emit('input', event.target.value);
+      },
+
+      changeEvent(event) {
+        this.$emit('change', event.target.value);
       }
     }
   };
