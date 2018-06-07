@@ -20,6 +20,7 @@
     </div>
     <div slot='Implementation'>
       <docs-table type='props' :data='textFieldProps' name='TextField' />
+      <docs-table type='events' :data='textFieldEvents' name='TextField' />
     </div>
   </docs-content>
 </template>
@@ -46,6 +47,9 @@
           { name: 'input-type', type: 'String', defaultValue: 'text', required: 'false', acceptedValue: 'text, password, file', description: 'the input type of the textField' },
           { name: 'label', type: 'String', required: 'false', description: 'the label of the textField' },
           { name: 'disabled', type: 'Boolean', required: 'false', defaultValue: 'false', description: 'if the textField is disabled' }
+        ],
+        textFieldEvents: [
+          { name: 'change', description: 'the callback function when value changed' }
         ]
       };
     }
