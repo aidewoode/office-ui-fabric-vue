@@ -1,13 +1,14 @@
 <template>
   <li class='ms-ListItem'
     ref='listItem'
-    :class='listItemClass'>
+    :class='listItemClass'
+    @click='clickEvent'>
     <img v-if="type == 'image'" class='ms-ListItem-image' :src='imageSrc' />
     <span v-if='primaryText' class='ms-ListItem-primaryText'>{{ primaryText }}</span>
     <span v-if='secondaryText' class='ms-ListItem-secondaryText'>{{ secondaryText }}</span>
     <span v-if='tertiaryText' class='ms-ListItem-tertiaryText'>{{ tertiaryText }}</span>
     <span v-if='metaText' class='ms-ListItem-metaText'>{{ metaText }}</span>
-    <div v-if='isSelectable' @click='toggle' class='ms-ListItem-selectionTarget'></div>
+    <div v-if='isSelectable' @click.stop='toggle' class='ms-ListItem-selectionTarget'></div>
     <slot />
   </li>
 </template>
@@ -49,6 +50,10 @@
         if (this.isSelectable) {
           this.$emit('input', !this.value);
         }
+      },
+
+      clickEvent() {
+        this.$emit('click');
       }
     }
   };

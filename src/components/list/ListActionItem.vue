@@ -1,5 +1,5 @@
 <template>
-  <div class='ms-ListItem-action' @click='clickEvent'>
+  <div class='ms-ListItem-action' @click.stop='clickEvent'>
     <i class='ms-Icon' :class='iconClass'></i>
   </div>
 </template>

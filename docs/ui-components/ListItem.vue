@@ -116,6 +116,7 @@
     </div>
     <div slot='Implementation'>
       <docs-table type='props' :data='listItemProps' name='ListItem' />
+      <docs-table type='events' :data='listItemEvents' name='ListItem' />
       <docs-table type='props' :data='listActionItemProps' name='ListActionItem' />
       <docs-table type='events' :data='listActionItemEvents' name='ListActionItem' />
     </div>
@@ -156,6 +157,9 @@
           { name: 'metaText', type: 'String', required: 'false', description: 'the meta text of the list item' },
         ],
 
+        listItemEvents: [
+          { name: 'click', description: 'the callback function when clicked the list item' }
+        ],
 
         listActionItemProps: [
           { name: 'icon', type: 'String', required: 'false', description: 'the icon for the list action item' }
