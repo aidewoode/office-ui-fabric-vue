@@ -6,7 +6,7 @@
       type='text'
       :value='value'
       @input='updateValue'
-      @blur='clearValue' />
+      @blur='blur' />
     <label class='ms-SearchBox-label'>
       <i class='ms-SearchBox-icon ms-Icon ms-Icon--Search'></i>
       <span class='ms-SearchBox-text' v-if='!hasValue'>{{ placeholder }}</span>
@@ -34,6 +34,11 @@
       collapsed: {
         type: Boolean,
         default: false
+      },
+
+      clearOnBlur: {
+        type: Boolean,
+        default: true
       }
     },
 
@@ -57,6 +62,12 @@
     },
 
     methods: {
+      blur() {
+        if (this.clearOnBlur) {
+          this.clearValue();
+        }
+      },
+
       updateValue(event) {
         this.$emit('input', event.target.value);
       },
