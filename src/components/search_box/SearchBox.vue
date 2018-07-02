@@ -5,8 +5,7 @@
       ref='searchBoxInput'
       type='text'
       :value='value'
-      @input='updateValue'
-      @blur='clearValue' />
+      @input='updateValue' />
     <label class='ms-SearchBox-label'>
       <i class='ms-SearchBox-icon ms-Icon ms-Icon--Search'></i>
       <span class='ms-SearchBox-text' v-if='!hasValue'>{{ placeholder }}</span>
@@ -39,7 +38,8 @@
 
     data() {
       return {
-        hasValue: !!this.value
+        hasValue: !!this.value,
+        searchBoxInstance: null
       };
     },
 
@@ -53,7 +53,13 @@
     },
 
     mounted() {
-      new this.$fabric.SearchBox(this.$refs.searchBox);
+      this.searchBoxInstance = new this.$fabric.SearchBox(this.$refs.searchBox);
+
+      // Overwrite the default blur event on searchBoxField
+      // to prevent lose content when searchBox blur.
+      // You can see here https://github.com/OfficeDev/office-ui-fabric-js/issues/301
+      this.searchBoxInstance._searchBoxField.removeEventListener('blur', this.searchBoxInstance._boundHandleBlur, true);
+      this.searchBoxInstance._searchBoxField.addEventListener('blur', this.blurEvent, true);
     },
 
     methods: {
@@ -63,6 +69,25 @@
 
       clearValue() {
         this.$emit('input', '');
+      },
+
+      blurEvent() {
+        const self = this.searchBoxInstance;
+
+        if (!self._clearOnly) {
+          self._searchBox.removeEventListener('keyup', self._boundEnableClose);
+          setTimeout(() => {
+            if (!self._searchBox.contains(document.activeElement) && self._searchBoxField.value == '') {
+              self._clearSearchBox();
+              self._collapseSearchBox();
+              self.setCollapsedListeners();
+            }
+          }, 10);
+        } else {
+          self._searchBoxField.focus();
+        }
+
+        self._clearOnly = false;
       }
     }
   };

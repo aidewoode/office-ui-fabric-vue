@@ -54,13 +54,13 @@ describe('SearchBox', () => {
     expect(inputEvent).toBeCalledWith('');
   });
 
-  test('should clear value when blur input', () => {
+  test('should can not clear value when blur input', () => {
     const inputEvent = jest.fn();
 
     wrapper.vm.$on('input', inputEvent);
     wrapper.setProps({ value: 'input' });
     wrapper.find('.ms-SearchBox-field').trigger('blur');
 
-    expect(inputEvent).toBeCalledWith('');
+    expect(wrapper.find('.ms-SearchBox-field').element.value).toBe('input');
   });
 });
