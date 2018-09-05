@@ -44,6 +44,12 @@
           <span class='ms-font-m'>Content goes here</span>
         </ou-panel>
       </docs-code-block>
+      <docs-code-block title='Blocking Panel' :code='blockingCode'>
+        <ou-button @click='openBlockingPanel'>Open Panel</ou-button>
+        <ou-panel title='Panel' block v-model='blockingPanelVisiblity'>
+          <ou-button @click='closeBlockingPanel'>Close Panel</ou-button>
+        </ou-panel>
+      </docs-code-block>
     </div>
     <div slot='Implementation'>
       <docs-table type='props' :data='panelProps' name='Panel' />
@@ -59,6 +65,7 @@
   import extraLargeCode from '../markdown/panel/extraLargeCode.md';
   import extraExtraLargeCode from '../markdown/panel/extraExtraLargeCode.md';
   import leftCode from '../markdown/panel/leftCode.md';
+  import blockingCode from '../markdown/panel/blockingCode.md';
 
   export default {
     data() {
@@ -71,6 +78,7 @@
         extraLargeCode,
         extraExtraLargeCode,
         leftCode,
+        blockingCode,
         defaultPanelVisiblity: false,
         mediumPanelVisiblity: false,
         largePanelVisiblity: false,
@@ -78,12 +86,14 @@
         extraLargePanelVisiblity: false,
         extraExtraLargePanelVisiblity: false,
         leftPanelVisiblity: false,
+        blockingPanelVisiblity: false,
         panelProps: [
           { name: 'v-model', type: 'Boolean', required: 'false', description: "bind boolean value to the panel to control it's visibility" },
           { name: 'size', type: 'String', required: 'false', acceptedValue: 'md, lg, xl, xxl', description: 'the size of the panel' },
           { name: 'title', type: 'String', required: 'false', description: 'the title of the panel' },
           { name: 'fixed', type: 'Boolean', required: 'false', defaultValue: 'false', description: 'if the panel is fixed' },
-          { name: 'left', type: 'Boolean', required: 'false', defaultValue: 'false', description: 'if the panel position is left' }
+          { name: 'left', type: 'Boolean', required: 'false', defaultValue: 'false', description: 'if the panel position is left' },
+          { name: 'block', type: 'Boolean', required: 'false', defaultValue: 'false', description: 'if the panel is blocking' }
         ]
       };
     },
@@ -115,6 +125,14 @@
 
       openLeftPanel() {
         this.leftPanelVisiblity = true;
+      },
+
+      openBlockingPanel() {
+        this.blockingPanelVisiblity = true;
+      },
+
+      closeBlockingPanel() {
+        this.blockingPanelVisiblity = false;
       }
     }
   };

@@ -31,6 +31,11 @@
       left: {
         type: Boolean,
         default: false
+      },
+
+      block: {
+        type: Boolean,
+        default: false
       }
     },
 
@@ -76,7 +81,13 @@
       // to close the panel.
       bindOverlayCloseEvent() {
         const overlayElement = this.panelInstance.panelHost.overlay.overlayElement;
-        overlayElement.addEventListener('click', this.closePanel);
+
+        if (this.block) {
+          // Remove overlayElement to avoid close panel when click overlay.
+          overlayElement.remove();
+        } else {
+          overlayElement.addEventListener('click', this.closePanel);
+        }
       },
 
       closePanel() {
