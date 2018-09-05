@@ -44,6 +44,15 @@ describe('Pivot', () => {
     expect(wrapper.findAll('.ms-Pivot-content').length).toBe(defaultSlot.length);
   });
 
+  test('should has click event', () => {
+    const clickEvent = jest.fn();
+
+    wrapper.vm.$on('click', clickEvent);
+    wrapper.findAll('.ms-Pivot-link').at(1).trigger('click');
+
+    expect(clickEvent).toBeCalled();
+  });
+
   test('should switch content when click pivot link', () => {
    wrapper.findAll('.ms-Pivot-link').at(1).trigger('click');
 

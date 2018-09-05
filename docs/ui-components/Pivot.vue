@@ -33,6 +33,7 @@
     </div>
     <div slot='Implementation'>
       <docs-table type='props' :data='pivotProps' name='Pivot' />
+      <docs-table type='events' :data='pivotEvents' name='Pivot' />
       <docs-table type='props' :data='pivotItemProps' name='Pivot Item' />
     </div>
   </docs-content>
@@ -55,6 +56,10 @@
         pivotProps: [
           { name: 'size', type: 'String', required: 'false', acceptedValue: 'large', description: 'the size of the pivot' },
           { name: 'type', type: 'String', required: 'false', acceptedValue: 'tabs', description: 'the type of the pivot' }
+        ],
+
+        pivotEvents: [
+          { name: 'click', description: 'the callback function when clicked the pivot item', params: 'click event' }
         ],
 
         pivotItemProps: [

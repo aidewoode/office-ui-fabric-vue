@@ -1,6 +1,6 @@
 <template>
   <div class='ms-Pivot' :class='pivotClass' ref='pivot'>
-    <ul class='ms-Pivot-links'>
+    <ul class='ms-Pivot-links' @click='clickEvent'>
       <li v-for='(item, index) of pivotItems'
         class='ms-Pivot-link'
         tabindex='1'
@@ -57,6 +57,12 @@
     methods: {
       addPivotItem(label) {
         this.pivotItems.push(label);
+      },
+
+      clickEvent(event) {
+        if (event.target.tagName == 'LI') {
+          this.$emit('click', event);
+        }
       }
     }
   };
