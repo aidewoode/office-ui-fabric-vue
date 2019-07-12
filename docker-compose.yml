@@ -1,0 +1,10 @@
+version: '3.0'
+services:
+  app:
+    image: node:10.16.0-alpine
+    volumes:
+      - .:/app
+    working_dir: /app
+    command: ["yarn", "run", "serverPublic"]
+    ports:
+      - 8080:8080

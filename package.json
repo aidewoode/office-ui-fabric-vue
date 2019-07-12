@@ -20,6 +20,7 @@
   ],
   "scripts": {
     "server": "./node_modules/.bin/webpack-dev-server --inline --hot --env.development",
+    "serverPublic": "./node_modules/.bin/webpack-dev-server --inline --hot --env.development --host 0.0.0.0",
     "bundle": "./node_modules/.bin/webpack --env.production",
     "bundleLib": "./node_modules/.bin/webpack --env.production --env.lib",
     "test": "./node_modules/.bin/jest",

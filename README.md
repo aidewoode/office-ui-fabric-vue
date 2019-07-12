@@ -2,6 +2,9 @@
 [![Build status](https://travis-ci.org/aidewoode/office-ui-fabric-vue.svg?branch=master)](https://travis-ci.org/aidewoode/office-ui-fabric-vue)
 [![NPM version](https://img.shields.io/npm/v/office-ui-fabric-vue.svg)](https://www.npmjs.com/package/office-ui-fabric-vue)
 
+> **Note:** Because [office-ui-fabric-js](https://github.com/OfficeDev/office-ui-fabric-js) no longer support, this project need to rewrite using [office-ui-fabric-core](https://github.com/OfficeDev/office-ui-fabric-core). But it's lots of works, I don't have too much time on this project now. So this project will no longer support. If someone wants to works with me on this project to write a new version, please contact me.
+ 
+
 ## Introduction
 
 Office UI Fabric implementation for Vue.js, build with [office-ui-fabric-js](https://github.com/OfficeDev/office-ui-fabric-js)
